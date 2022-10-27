@@ -1,0 +1,41 @@
+|vl2
+rst => qb[0]~reg0.ACLR
+rst => qb[1]~reg0.ACLR
+rst => qb[2]~reg0.ACLR
+rst => qb[3]~reg0.ACLR
+rst => qa[0]~reg0.ACLR
+rst => qa[1]~reg0.ACLR
+fin => clk.CLK
+fin => count[0].CLK
+fin => count[1].CLK
+fin => count[2].CLK
+fin => count[3].CLK
+fin => count[4].CLK
+fin => count[5].CLK
+fin => count[6].CLK
+fin => count[7].CLK
+fin => count[8].CLK
+fin => count[9].CLK
+fin => count[10].CLK
+fin => count[11].CLK
+fin => count[12].CLK
+fin => count[13].CLK
+fin => count[14].CLK
+fin => count[15].CLK
+P22 => OneHz_in_d.DATAIN
+P20_sel => P20_sel_d.DATAIN
+P5 => P5_d.DATAIN
+P7 => P7_d.DATAIN
+P19 => clk_h.DATAB
+P21 => P21_d.DATAIN
+P8 <= P8.DB_MAX_OUTPUT_PORT_TYPE
+P4 <= P4.DB_MAX_OUTPUT_PORT_TYPE
+P6 <= P6.DB_MAX_OUTPUT_PORT_TYPE
+qb[0] <= qb[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+qb[1] <= qb[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+qb[2] <= qb[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+qb[3] <= qb[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+qa[0] <= qa[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+qa[1] <= qa[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

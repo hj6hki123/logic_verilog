@@ -1,0 +1,745 @@
+TimeQuest Timing Analyzer report for vl2
+Mon Oct 24 16:55:10 2022
+Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'P19'
+ 12. Setup: 'fin'
+ 13. Hold: 'fin'
+ 14. Hold: 'P19'
+ 15. Minimum Pulse Width: 'fin'
+ 16. Minimum Pulse Width: 'P19'
+ 17. Minimum Pulse Width: 'clk'
+ 18. Setup Times
+ 19. Hold Times
+ 20. Clock to Output Times
+ 21. Minimum Clock to Output Times
+ 22. Setup Transfers
+ 23. Hold Transfers
+ 24. Report TCCS
+ 25. Report RSKM
+ 26. Unconstrained Paths
+ 27. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                       ;
++--------------------+----------------------------------------------------+
+; Quartus II Version ; Version 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
+; Revision Name      ; vl2                                                ;
+; Device Family      ; MAX3000A                                           ;
+; Device Name        ; EPM3064ALC44-10                                    ;
+; Timing Models      ; Final                                              ;
+; Delay Model        ; Slow Model                                         ;
+; Rise/Fall Delays   ; Unavailable                                        ;
++--------------------+----------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 6           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-12        ;   0.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                          ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; clk        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk } ;
+; fin        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { fin } ;
+; P19        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { P19 } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+
+
++-------------------------------------------------+
+; Fmax Summary                                    ;
++-----------+-----------------+------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
++-----------+-----------------+------------+------+
+; 70.92 MHz ; 70.92 MHz       ; P19        ;      ;
+; 90.91 MHz ; 90.91 MHz       ; fin        ;      ;
++-----------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++---------------------------------+
+; Setup Summary                   ;
++-------+---------+---------------+
+; Clock ; Slack   ; End Point TNS ;
++-------+---------+---------------+
+; P19   ; -13.100 ; -63.900       ;
+; fin   ; -10.000 ; -131.900      ;
++-------+---------+---------------+
+
+
++-------------------------------+
+; Hold Summary                  ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; fin   ; 0.600 ; 0.000         ;
+; P19   ; 5.800 ; 0.000         ;
++-------+-------+---------------+
+
+
+--------------------
+; Recovery Summary ;
+--------------------
+No paths to report.
+
+
+-------------------
+; Removal Summary ;
+-------------------
+No paths to report.
+
+
++--------------------------------+
+; Minimum Pulse Width Summary    ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; fin   ; -3.500 ; -98.000       ;
+; P19   ; -3.500 ; -42.000       ;
+; clk   ; -3.500 ; -35.000       ;
++-------+--------+---------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'P19'                                                                                                                                ;
++---------+------------------------------+------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack   ; From Node                    ; To Node                      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++---------+------------------------------+------------------------------+--------------+-------------+--------------+------------+------------+
+; -13.100 ; qa[1]~reg0                   ; lpm_counter:qb_rtl_0|dffs[1] ; P19          ; P19         ; 1.000        ; 0.000      ; 11.200     ;
+; -13.100 ; lpm_counter:qb_rtl_0|dffs[2] ; qa[1]~reg0                   ; P19          ; P19         ; 1.000        ; 0.000      ; 11.200     ;
+; -13.100 ; lpm_counter:qb_rtl_0|dffs[1] ; qa[1]~reg0                   ; P19          ; P19         ; 1.000        ; 0.000      ; 11.200     ;
+; -13.100 ; lpm_counter:qb_rtl_0|dffs[2] ; lpm_counter:qb_rtl_0|dffs[1] ; P19          ; P19         ; 1.000        ; 0.000      ; 11.200     ;
+; -13.100 ; lpm_counter:qb_rtl_0|dffs[0] ; qa[1]~reg0                   ; P19          ; P19         ; 1.000        ; 0.000      ; 11.200     ;
+; -10.100 ; qa[1]~reg0                   ; qa[0]~reg0                   ; P19          ; P19         ; 1.000        ; 0.000      ; 8.200      ;
+; -10.100 ; lpm_counter:qb_rtl_0|dffs[3] ; qa[0]~reg0                   ; P19          ; P19         ; 1.000        ; 0.000      ; 8.200      ;
+; -10.100 ; lpm_counter:qb_rtl_0|dffs[2] ; qa[0]~reg0                   ; P19          ; P19         ; 1.000        ; 0.000      ; 8.200      ;
+; -10.100 ; lpm_counter:qb_rtl_0|dffs[1] ; qa[0]~reg0                   ; P19          ; P19         ; 1.000        ; 0.000      ; 8.200      ;
+; -10.100 ; lpm_counter:qb_rtl_0|dffs[0] ; qa[0]~reg0                   ; P19          ; P19         ; 1.000        ; 0.000      ; 8.200      ;
+; -9.900  ; qa[0]~reg0                   ; qa[0]~reg0                   ; P19          ; P19         ; 1.000        ; 0.000      ; 8.000      ;
+; -9.200  ; lpm_counter:qb_rtl_0|dffs[1] ; lpm_counter:qb_rtl_0|dffs[1] ; P19          ; P19         ; 1.000        ; 0.000      ; 7.300      ;
+; -9.200  ; lpm_counter:qb_rtl_0|dffs[0] ; lpm_counter:qb_rtl_0|dffs[1] ; P19          ; P19         ; 1.000        ; 0.000      ; 7.300      ;
+; -9.200  ; lpm_counter:qb_rtl_0|dffs[3] ; lpm_counter:qb_rtl_0|dffs[1] ; P19          ; P19         ; 1.000        ; 0.000      ; 7.300      ;
+; -9.200  ; qa[1]~reg0                   ; qa[1]~reg0                   ; P19          ; P19         ; 1.000        ; 0.000      ; 7.300      ;
+; -9.200  ; lpm_counter:qb_rtl_0|dffs[3] ; qa[1]~reg0                   ; P19          ; P19         ; 1.000        ; 0.000      ; 7.300      ;
+; -9.200  ; lpm_counter:qb_rtl_0|dffs[0] ; lpm_counter:qb_rtl_0|dffs[2] ; P19          ; P19         ; 1.000        ; 0.000      ; 7.300      ;
+; -9.200  ; lpm_counter:qb_rtl_0|dffs[2] ; lpm_counter:qb_rtl_0|dffs[2] ; P19          ; P19         ; 1.000        ; 0.000      ; 7.300      ;
+; -9.200  ; qa[1]~reg0                   ; lpm_counter:qb_rtl_0|dffs[2] ; P19          ; P19         ; 1.000        ; 0.000      ; 7.300      ;
+; -9.200  ; lpm_counter:qb_rtl_0|dffs[3] ; lpm_counter:qb_rtl_0|dffs[2] ; P19          ; P19         ; 1.000        ; 0.000      ; 7.300      ;
+; -9.200  ; lpm_counter:qb_rtl_0|dffs[1] ; lpm_counter:qb_rtl_0|dffs[2] ; P19          ; P19         ; 1.000        ; 0.000      ; 7.300      ;
+; -9.200  ; lpm_counter:qb_rtl_0|dffs[2] ; lpm_counter:qb_rtl_0|dffs[3] ; P19          ; P19         ; 1.000        ; 0.000      ; 7.300      ;
+; -9.200  ; lpm_counter:qb_rtl_0|dffs[3] ; lpm_counter:qb_rtl_0|dffs[3] ; P19          ; P19         ; 1.000        ; 0.000      ; 7.300      ;
+; -9.200  ; qa[1]~reg0                   ; lpm_counter:qb_rtl_0|dffs[3] ; P19          ; P19         ; 1.000        ; 0.000      ; 7.300      ;
+; -9.200  ; lpm_counter:qb_rtl_0|dffs[0] ; lpm_counter:qb_rtl_0|dffs[3] ; P19          ; P19         ; 1.000        ; 0.000      ; 7.300      ;
+; -9.200  ; lpm_counter:qb_rtl_0|dffs[1] ; lpm_counter:qb_rtl_0|dffs[3] ; P19          ; P19         ; 1.000        ; 0.000      ; 7.300      ;
+; -9.200  ; lpm_counter:qb_rtl_0|dffs[0] ; lpm_counter:qb_rtl_0|dffs[0] ; P19          ; P19         ; 1.000        ; 0.000      ; 7.300      ;
+; -9.200  ; lpm_counter:qb_rtl_0|dffs[3] ; lpm_counter:qb_rtl_0|dffs[0] ; P19          ; P19         ; 1.000        ; 0.000      ; 7.300      ;
+; -9.200  ; lpm_counter:qb_rtl_0|dffs[2] ; lpm_counter:qb_rtl_0|dffs[0] ; P19          ; P19         ; 1.000        ; 0.000      ; 7.300      ;
+; -9.200  ; qa[1]~reg0                   ; lpm_counter:qb_rtl_0|dffs[0] ; P19          ; P19         ; 1.000        ; 0.000      ; 7.300      ;
+; -9.200  ; lpm_counter:qb_rtl_0|dffs[1] ; lpm_counter:qb_rtl_0|dffs[0] ; P19          ; P19         ; 1.000        ; 0.000      ; 7.300      ;
+; -9.000  ; qa[0]~reg0                   ; qa[1]~reg0                   ; P19          ; P19         ; 1.000        ; 0.000      ; 7.100      ;
++---------+------------------------------+------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'fin'                                                                                                                                        ;
++---------+----------------------------------+----------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack   ; From Node                        ; To Node                          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++---------+----------------------------------+----------------------------------+--------------+-------------+--------------+------------+------------+
+; -10.000 ; lpm_counter:count_rtl_0|dffs[12] ; lpm_counter:count_rtl_0|dffs[3]  ; fin          ; fin         ; 1.000        ; 0.000      ; 8.100      ;
+; -10.000 ; lpm_counter:count_rtl_0|dffs[12] ; lpm_counter:count_rtl_0|dffs[4]  ; fin          ; fin         ; 1.000        ; 0.000      ; 8.100      ;
+; -10.000 ; lpm_counter:count_rtl_0|dffs[12] ; lpm_counter:count_rtl_0|dffs[5]  ; fin          ; fin         ; 1.000        ; 0.000      ; 8.100      ;
+; -10.000 ; lpm_counter:count_rtl_0|dffs[12] ; lpm_counter:count_rtl_0|dffs[6]  ; fin          ; fin         ; 1.000        ; 0.000      ; 8.100      ;
+; -10.000 ; lpm_counter:count_rtl_0|dffs[12] ; lpm_counter:count_rtl_0|dffs[7]  ; fin          ; fin         ; 1.000        ; 0.000      ; 8.100      ;
+; -10.000 ; lpm_counter:count_rtl_0|dffs[11] ; lpm_counter:count_rtl_0|dffs[3]  ; fin          ; fin         ; 1.000        ; 0.000      ; 8.100      ;
+; -10.000 ; lpm_counter:count_rtl_0|dffs[10] ; lpm_counter:count_rtl_0|dffs[3]  ; fin          ; fin         ; 1.000        ; 0.000      ; 8.100      ;
+; -10.000 ; lpm_counter:count_rtl_0|dffs[9]  ; lpm_counter:count_rtl_0|dffs[3]  ; fin          ; fin         ; 1.000        ; 0.000      ; 8.100      ;
+; -10.000 ; lpm_counter:count_rtl_0|dffs[8]  ; lpm_counter:count_rtl_0|dffs[3]  ; fin          ; fin         ; 1.000        ; 0.000      ; 8.100      ;
+; -10.000 ; lpm_counter:count_rtl_0|dffs[7]  ; lpm_counter:count_rtl_0|dffs[3]  ; fin          ; fin         ; 1.000        ; 0.000      ; 8.100      ;
+; -10.000 ; lpm_counter:count_rtl_0|dffs[11] ; lpm_counter:count_rtl_0|dffs[4]  ; fin          ; fin         ; 1.000        ; 0.000      ; 8.100      ;
+; -10.000 ; lpm_counter:count_rtl_0|dffs[10] ; lpm_counter:count_rtl_0|dffs[4]  ; fin          ; fin         ; 1.000        ; 0.000      ; 8.100      ;
+; -10.000 ; lpm_counter:count_rtl_0|dffs[9]  ; lpm_counter:count_rtl_0|dffs[4]  ; fin          ; fin         ; 1.000        ; 0.000      ; 8.100      ;
+; -10.000 ; lpm_counter:count_rtl_0|dffs[8]  ; lpm_counter:count_rtl_0|dffs[4]  ; fin          ; fin         ; 1.000        ; 0.000      ; 8.100      ;
+; -10.000 ; lpm_counter:count_rtl_0|dffs[7]  ; lpm_counter:count_rtl_0|dffs[4]  ; fin          ; fin         ; 1.000        ; 0.000      ; 8.100      ;
+; -10.000 ; lpm_counter:count_rtl_0|dffs[6]  ; lpm_counter:count_rtl_0|dffs[4]  ; fin          ; fin         ; 1.000        ; 0.000      ; 8.100      ;
+; -10.000 ; lpm_counter:count_rtl_0|dffs[11] ; lpm_counter:count_rtl_0|dffs[5]  ; fin          ; fin         ; 1.000        ; 0.000      ; 8.100      ;
+; -10.000 ; lpm_counter:count_rtl_0|dffs[10] ; lpm_counter:count_rtl_0|dffs[5]  ; fin          ; fin         ; 1.000        ; 0.000      ; 8.100      ;
+; -10.000 ; lpm_counter:count_rtl_0|dffs[9]  ; lpm_counter:count_rtl_0|dffs[5]  ; fin          ; fin         ; 1.000        ; 0.000      ; 8.100      ;
+; -10.000 ; lpm_counter:count_rtl_0|dffs[8]  ; lpm_counter:count_rtl_0|dffs[5]  ; fin          ; fin         ; 1.000        ; 0.000      ; 8.100      ;
+; -10.000 ; lpm_counter:count_rtl_0|dffs[7]  ; lpm_counter:count_rtl_0|dffs[5]  ; fin          ; fin         ; 1.000        ; 0.000      ; 8.100      ;
+; -10.000 ; lpm_counter:count_rtl_0|dffs[6]  ; lpm_counter:count_rtl_0|dffs[5]  ; fin          ; fin         ; 1.000        ; 0.000      ; 8.100      ;
+; -10.000 ; lpm_counter:count_rtl_0|dffs[1]  ; lpm_counter:count_rtl_0|dffs[5]  ; fin          ; fin         ; 1.000        ; 0.000      ; 8.100      ;
+; -10.000 ; lpm_counter:count_rtl_0|dffs[1]  ; lpm_counter:count_rtl_0|dffs[6]  ; fin          ; fin         ; 1.000        ; 0.000      ; 8.100      ;
+; -10.000 ; lpm_counter:count_rtl_0|dffs[0]  ; lpm_counter:count_rtl_0|dffs[6]  ; fin          ; fin         ; 1.000        ; 0.000      ; 8.100      ;
+; -10.000 ; lpm_counter:count_rtl_0|dffs[11] ; lpm_counter:count_rtl_0|dffs[6]  ; fin          ; fin         ; 1.000        ; 0.000      ; 8.100      ;
+; -10.000 ; lpm_counter:count_rtl_0|dffs[1]  ; lpm_counter:count_rtl_0|dffs[7]  ; fin          ; fin         ; 1.000        ; 0.000      ; 8.100      ;
+; -10.000 ; lpm_counter:count_rtl_0|dffs[0]  ; lpm_counter:count_rtl_0|dffs[7]  ; fin          ; fin         ; 1.000        ; 0.000      ; 8.100      ;
+; -10.000 ; lpm_counter:count_rtl_0|dffs[6]  ; lpm_counter:count_rtl_0|dffs[7]  ; fin          ; fin         ; 1.000        ; 0.000      ; 8.100      ;
+; -9.900  ; lpm_counter:count_rtl_0|dffs[5]  ; lpm_counter:count_rtl_0|dffs[5]  ; fin          ; fin         ; 1.000        ; 0.000      ; 8.000      ;
+; -9.900  ; lpm_counter:count_rtl_0|dffs[2]  ; lpm_counter:count_rtl_0|dffs[6]  ; fin          ; fin         ; 1.000        ; 0.000      ; 8.000      ;
+; -9.900  ; lpm_counter:count_rtl_0|dffs[3]  ; lpm_counter:count_rtl_0|dffs[6]  ; fin          ; fin         ; 1.000        ; 0.000      ; 8.000      ;
+; -9.900  ; lpm_counter:count_rtl_0|dffs[4]  ; lpm_counter:count_rtl_0|dffs[6]  ; fin          ; fin         ; 1.000        ; 0.000      ; 8.000      ;
+; -9.900  ; lpm_counter:count_rtl_0|dffs[5]  ; lpm_counter:count_rtl_0|dffs[6]  ; fin          ; fin         ; 1.000        ; 0.000      ; 8.000      ;
+; -9.900  ; lpm_counter:count_rtl_0|dffs[2]  ; lpm_counter:count_rtl_0|dffs[7]  ; fin          ; fin         ; 1.000        ; 0.000      ; 8.000      ;
+; -9.900  ; lpm_counter:count_rtl_0|dffs[3]  ; lpm_counter:count_rtl_0|dffs[7]  ; fin          ; fin         ; 1.000        ; 0.000      ; 8.000      ;
+; -9.900  ; lpm_counter:count_rtl_0|dffs[4]  ; lpm_counter:count_rtl_0|dffs[7]  ; fin          ; fin         ; 1.000        ; 0.000      ; 8.000      ;
+; -9.900  ; lpm_counter:count_rtl_0|dffs[5]  ; lpm_counter:count_rtl_0|dffs[7]  ; fin          ; fin         ; 1.000        ; 0.000      ; 8.000      ;
+; -9.100  ; lpm_counter:count_rtl_0|dffs[1]  ; lpm_counter:count_rtl_0|dffs[2]  ; fin          ; fin         ; 1.000        ; 0.000      ; 7.200      ;
+; -9.100  ; lpm_counter:count_rtl_0|dffs[0]  ; lpm_counter:count_rtl_0|dffs[2]  ; fin          ; fin         ; 1.000        ; 0.000      ; 7.200      ;
+; -9.100  ; lpm_counter:count_rtl_0|dffs[12] ; lpm_counter:count_rtl_0|dffs[2]  ; fin          ; fin         ; 1.000        ; 0.000      ; 7.200      ;
+; -9.100  ; lpm_counter:count_rtl_0|dffs[11] ; lpm_counter:count_rtl_0|dffs[2]  ; fin          ; fin         ; 1.000        ; 0.000      ; 7.200      ;
+; -9.100  ; lpm_counter:count_rtl_0|dffs[10] ; lpm_counter:count_rtl_0|dffs[2]  ; fin          ; fin         ; 1.000        ; 0.000      ; 7.200      ;
+; -9.100  ; lpm_counter:count_rtl_0|dffs[9]  ; lpm_counter:count_rtl_0|dffs[2]  ; fin          ; fin         ; 1.000        ; 0.000      ; 7.200      ;
+; -9.100  ; lpm_counter:count_rtl_0|dffs[8]  ; lpm_counter:count_rtl_0|dffs[2]  ; fin          ; fin         ; 1.000        ; 0.000      ; 7.200      ;
+; -9.100  ; lpm_counter:count_rtl_0|dffs[7]  ; lpm_counter:count_rtl_0|dffs[2]  ; fin          ; fin         ; 1.000        ; 0.000      ; 7.200      ;
+; -9.100  ; lpm_counter:count_rtl_0|dffs[6]  ; lpm_counter:count_rtl_0|dffs[2]  ; fin          ; fin         ; 1.000        ; 0.000      ; 7.200      ;
+; -9.100  ; lpm_counter:count_rtl_0|dffs[1]  ; lpm_counter:count_rtl_0|dffs[3]  ; fin          ; fin         ; 1.000        ; 0.000      ; 7.200      ;
+; -9.100  ; lpm_counter:count_rtl_0|dffs[0]  ; lpm_counter:count_rtl_0|dffs[3]  ; fin          ; fin         ; 1.000        ; 0.000      ; 7.200      ;
+; -9.100  ; lpm_counter:count_rtl_0|dffs[6]  ; lpm_counter:count_rtl_0|dffs[3]  ; fin          ; fin         ; 1.000        ; 0.000      ; 7.200      ;
+; -9.100  ; lpm_counter:count_rtl_0|dffs[1]  ; lpm_counter:count_rtl_0|dffs[4]  ; fin          ; fin         ; 1.000        ; 0.000      ; 7.200      ;
+; -9.100  ; lpm_counter:count_rtl_0|dffs[0]  ; lpm_counter:count_rtl_0|dffs[4]  ; fin          ; fin         ; 1.000        ; 0.000      ; 7.200      ;
+; -9.100  ; lpm_counter:count_rtl_0|dffs[0]  ; lpm_counter:count_rtl_0|dffs[5]  ; fin          ; fin         ; 1.000        ; 0.000      ; 7.200      ;
+; -9.100  ; lpm_counter:count_rtl_0|dffs[10] ; lpm_counter:count_rtl_0|dffs[6]  ; fin          ; fin         ; 1.000        ; 0.000      ; 7.200      ;
+; -9.100  ; lpm_counter:count_rtl_0|dffs[9]  ; lpm_counter:count_rtl_0|dffs[6]  ; fin          ; fin         ; 1.000        ; 0.000      ; 7.200      ;
+; -9.100  ; lpm_counter:count_rtl_0|dffs[8]  ; lpm_counter:count_rtl_0|dffs[6]  ; fin          ; fin         ; 1.000        ; 0.000      ; 7.200      ;
+; -9.100  ; lpm_counter:count_rtl_0|dffs[6]  ; lpm_counter:count_rtl_0|dffs[6]  ; fin          ; fin         ; 1.000        ; 0.000      ; 7.200      ;
+; -9.100  ; lpm_counter:count_rtl_0|dffs[7]  ; lpm_counter:count_rtl_0|dffs[6]  ; fin          ; fin         ; 1.000        ; 0.000      ; 7.200      ;
+; -9.100  ; lpm_counter:count_rtl_0|dffs[12] ; lpm_counter:count_rtl_0|dffs[9]  ; fin          ; fin         ; 1.000        ; 0.000      ; 7.200      ;
+; -9.100  ; lpm_counter:count_rtl_0|dffs[11] ; lpm_counter:count_rtl_0|dffs[9]  ; fin          ; fin         ; 1.000        ; 0.000      ; 7.200      ;
+; -9.100  ; lpm_counter:count_rtl_0|dffs[10] ; lpm_counter:count_rtl_0|dffs[9]  ; fin          ; fin         ; 1.000        ; 0.000      ; 7.200      ;
+; -9.100  ; lpm_counter:count_rtl_0|dffs[8]  ; lpm_counter:count_rtl_0|dffs[9]  ; fin          ; fin         ; 1.000        ; 0.000      ; 7.200      ;
+; -9.100  ; lpm_counter:count_rtl_0|dffs[9]  ; lpm_counter:count_rtl_0|dffs[9]  ; fin          ; fin         ; 1.000        ; 0.000      ; 7.200      ;
+; -9.100  ; lpm_counter:count_rtl_0|dffs[6]  ; lpm_counter:count_rtl_0|dffs[9]  ; fin          ; fin         ; 1.000        ; 0.000      ; 7.200      ;
+; -9.100  ; lpm_counter:count_rtl_0|dffs[7]  ; lpm_counter:count_rtl_0|dffs[9]  ; fin          ; fin         ; 1.000        ; 0.000      ; 7.200      ;
+; -9.100  ; lpm_counter:count_rtl_0|dffs[1]  ; lpm_counter:count_rtl_0|dffs[9]  ; fin          ; fin         ; 1.000        ; 0.000      ; 7.200      ;
+; -9.100  ; lpm_counter:count_rtl_0|dffs[0]  ; lpm_counter:count_rtl_0|dffs[9]  ; fin          ; fin         ; 1.000        ; 0.000      ; 7.200      ;
+; -9.100  ; lpm_counter:count_rtl_0|dffs[12] ; lpm_counter:count_rtl_0|dffs[8]  ; fin          ; fin         ; 1.000        ; 0.000      ; 7.200      ;
+; -9.100  ; lpm_counter:count_rtl_0|dffs[11] ; lpm_counter:count_rtl_0|dffs[8]  ; fin          ; fin         ; 1.000        ; 0.000      ; 7.200      ;
+; -9.100  ; lpm_counter:count_rtl_0|dffs[10] ; lpm_counter:count_rtl_0|dffs[8]  ; fin          ; fin         ; 1.000        ; 0.000      ; 7.200      ;
+; -9.100  ; lpm_counter:count_rtl_0|dffs[9]  ; lpm_counter:count_rtl_0|dffs[8]  ; fin          ; fin         ; 1.000        ; 0.000      ; 7.200      ;
+; -9.100  ; lpm_counter:count_rtl_0|dffs[8]  ; lpm_counter:count_rtl_0|dffs[8]  ; fin          ; fin         ; 1.000        ; 0.000      ; 7.200      ;
+; -9.100  ; lpm_counter:count_rtl_0|dffs[6]  ; lpm_counter:count_rtl_0|dffs[8]  ; fin          ; fin         ; 1.000        ; 0.000      ; 7.200      ;
+; -9.100  ; lpm_counter:count_rtl_0|dffs[7]  ; lpm_counter:count_rtl_0|dffs[8]  ; fin          ; fin         ; 1.000        ; 0.000      ; 7.200      ;
+; -9.100  ; lpm_counter:count_rtl_0|dffs[1]  ; lpm_counter:count_rtl_0|dffs[8]  ; fin          ; fin         ; 1.000        ; 0.000      ; 7.200      ;
+; -9.100  ; lpm_counter:count_rtl_0|dffs[0]  ; lpm_counter:count_rtl_0|dffs[8]  ; fin          ; fin         ; 1.000        ; 0.000      ; 7.200      ;
+; -9.100  ; lpm_counter:count_rtl_0|dffs[12] ; lpm_counter:count_rtl_0|dffs[10] ; fin          ; fin         ; 1.000        ; 0.000      ; 7.200      ;
+; -9.100  ; lpm_counter:count_rtl_0|dffs[11] ; lpm_counter:count_rtl_0|dffs[10] ; fin          ; fin         ; 1.000        ; 0.000      ; 7.200      ;
+; -9.100  ; lpm_counter:count_rtl_0|dffs[8]  ; lpm_counter:count_rtl_0|dffs[10] ; fin          ; fin         ; 1.000        ; 0.000      ; 7.200      ;
+; -9.100  ; lpm_counter:count_rtl_0|dffs[9]  ; lpm_counter:count_rtl_0|dffs[10] ; fin          ; fin         ; 1.000        ; 0.000      ; 7.200      ;
+; -9.100  ; lpm_counter:count_rtl_0|dffs[10] ; lpm_counter:count_rtl_0|dffs[10] ; fin          ; fin         ; 1.000        ; 0.000      ; 7.200      ;
+; -9.100  ; lpm_counter:count_rtl_0|dffs[6]  ; lpm_counter:count_rtl_0|dffs[10] ; fin          ; fin         ; 1.000        ; 0.000      ; 7.200      ;
+; -9.100  ; lpm_counter:count_rtl_0|dffs[7]  ; lpm_counter:count_rtl_0|dffs[10] ; fin          ; fin         ; 1.000        ; 0.000      ; 7.200      ;
+; -9.100  ; lpm_counter:count_rtl_0|dffs[1]  ; lpm_counter:count_rtl_0|dffs[10] ; fin          ; fin         ; 1.000        ; 0.000      ; 7.200      ;
+; -9.100  ; lpm_counter:count_rtl_0|dffs[0]  ; lpm_counter:count_rtl_0|dffs[10] ; fin          ; fin         ; 1.000        ; 0.000      ; 7.200      ;
+; -9.100  ; lpm_counter:count_rtl_0|dffs[12] ; lpm_counter:count_rtl_0|dffs[1]  ; fin          ; fin         ; 1.000        ; 0.000      ; 7.200      ;
+; -9.100  ; lpm_counter:count_rtl_0|dffs[11] ; lpm_counter:count_rtl_0|dffs[1]  ; fin          ; fin         ; 1.000        ; 0.000      ; 7.200      ;
+; -9.100  ; lpm_counter:count_rtl_0|dffs[10] ; lpm_counter:count_rtl_0|dffs[1]  ; fin          ; fin         ; 1.000        ; 0.000      ; 7.200      ;
+; -9.100  ; lpm_counter:count_rtl_0|dffs[9]  ; lpm_counter:count_rtl_0|dffs[1]  ; fin          ; fin         ; 1.000        ; 0.000      ; 7.200      ;
+; -9.100  ; lpm_counter:count_rtl_0|dffs[8]  ; lpm_counter:count_rtl_0|dffs[1]  ; fin          ; fin         ; 1.000        ; 0.000      ; 7.200      ;
+; -9.100  ; lpm_counter:count_rtl_0|dffs[7]  ; lpm_counter:count_rtl_0|dffs[1]  ; fin          ; fin         ; 1.000        ; 0.000      ; 7.200      ;
+; -9.100  ; lpm_counter:count_rtl_0|dffs[6]  ; lpm_counter:count_rtl_0|dffs[1]  ; fin          ; fin         ; 1.000        ; 0.000      ; 7.200      ;
+; -9.100  ; lpm_counter:count_rtl_0|dffs[0]  ; lpm_counter:count_rtl_0|dffs[1]  ; fin          ; fin         ; 1.000        ; 0.000      ; 7.200      ;
+; -9.100  ; lpm_counter:count_rtl_0|dffs[1]  ; lpm_counter:count_rtl_0|dffs[1]  ; fin          ; fin         ; 1.000        ; 0.000      ; 7.200      ;
+; -9.100  ; lpm_counter:count_rtl_0|dffs[1]  ; lpm_counter:count_rtl_0|dffs[12] ; fin          ; fin         ; 1.000        ; 0.000      ; 7.200      ;
+; -9.100  ; lpm_counter:count_rtl_0|dffs[0]  ; lpm_counter:count_rtl_0|dffs[12] ; fin          ; fin         ; 1.000        ; 0.000      ; 7.200      ;
+; -9.100  ; lpm_counter:count_rtl_0|dffs[6]  ; lpm_counter:count_rtl_0|dffs[12] ; fin          ; fin         ; 1.000        ; 0.000      ; 7.200      ;
+; -9.100  ; lpm_counter:count_rtl_0|dffs[7]  ; lpm_counter:count_rtl_0|dffs[12] ; fin          ; fin         ; 1.000        ; 0.000      ; 7.200      ;
+; -9.100  ; lpm_counter:count_rtl_0|dffs[11] ; lpm_counter:count_rtl_0|dffs[12] ; fin          ; fin         ; 1.000        ; 0.000      ; 7.200      ;
+; -9.100  ; lpm_counter:count_rtl_0|dffs[10] ; lpm_counter:count_rtl_0|dffs[12] ; fin          ; fin         ; 1.000        ; 0.000      ; 7.200      ;
++---------+----------------------------------+----------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'fin'                                                                                                                                       ;
++-------+----------------------------------+----------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                        ; To Node                          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------------+----------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.600 ; clk                              ; clk                              ; clk          ; fin         ; 0.000        ; 3.600      ; 7.100      ;
+; 1.100 ; clk                              ; clk                              ; clk          ; fin         ; -0.500       ; 3.600      ; 7.100      ;
+; 5.800 ; lpm_counter:count_rtl_0|dffs[2]  ; lpm_counter:count_rtl_0|dffs[2]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; lpm_counter:count_rtl_0|dffs[3]  ; lpm_counter:count_rtl_0|dffs[3]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; lpm_counter:count_rtl_0|dffs[2]  ; lpm_counter:count_rtl_0|dffs[3]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; lpm_counter:count_rtl_0|dffs[4]  ; lpm_counter:count_rtl_0|dffs[4]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; lpm_counter:count_rtl_0|dffs[2]  ; lpm_counter:count_rtl_0|dffs[4]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; lpm_counter:count_rtl_0|dffs[3]  ; lpm_counter:count_rtl_0|dffs[4]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; lpm_counter:count_rtl_0|dffs[5]  ; lpm_counter:count_rtl_0|dffs[5]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; lpm_counter:count_rtl_0|dffs[2]  ; lpm_counter:count_rtl_0|dffs[5]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; lpm_counter:count_rtl_0|dffs[3]  ; lpm_counter:count_rtl_0|dffs[5]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; lpm_counter:count_rtl_0|dffs[4]  ; lpm_counter:count_rtl_0|dffs[5]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; lpm_counter:count_rtl_0|dffs[6]  ; lpm_counter:count_rtl_0|dffs[6]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; lpm_counter:count_rtl_0|dffs[2]  ; lpm_counter:count_rtl_0|dffs[6]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; lpm_counter:count_rtl_0|dffs[3]  ; lpm_counter:count_rtl_0|dffs[6]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; lpm_counter:count_rtl_0|dffs[4]  ; lpm_counter:count_rtl_0|dffs[6]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; lpm_counter:count_rtl_0|dffs[5]  ; lpm_counter:count_rtl_0|dffs[6]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; lpm_counter:count_rtl_0|dffs[9]  ; lpm_counter:count_rtl_0|dffs[9]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; lpm_counter:count_rtl_0|dffs[2]  ; lpm_counter:count_rtl_0|dffs[9]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; lpm_counter:count_rtl_0|dffs[3]  ; lpm_counter:count_rtl_0|dffs[9]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; lpm_counter:count_rtl_0|dffs[4]  ; lpm_counter:count_rtl_0|dffs[9]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; lpm_counter:count_rtl_0|dffs[5]  ; lpm_counter:count_rtl_0|dffs[9]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; lpm_counter:count_rtl_0|dffs[8]  ; lpm_counter:count_rtl_0|dffs[8]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; lpm_counter:count_rtl_0|dffs[2]  ; lpm_counter:count_rtl_0|dffs[8]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; lpm_counter:count_rtl_0|dffs[3]  ; lpm_counter:count_rtl_0|dffs[8]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; lpm_counter:count_rtl_0|dffs[4]  ; lpm_counter:count_rtl_0|dffs[8]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; lpm_counter:count_rtl_0|dffs[5]  ; lpm_counter:count_rtl_0|dffs[8]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; lpm_counter:count_rtl_0|dffs[10] ; lpm_counter:count_rtl_0|dffs[10] ; fin          ; fin         ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; lpm_counter:count_rtl_0|dffs[2]  ; lpm_counter:count_rtl_0|dffs[10] ; fin          ; fin         ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; lpm_counter:count_rtl_0|dffs[3]  ; lpm_counter:count_rtl_0|dffs[10] ; fin          ; fin         ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; lpm_counter:count_rtl_0|dffs[4]  ; lpm_counter:count_rtl_0|dffs[10] ; fin          ; fin         ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; lpm_counter:count_rtl_0|dffs[5]  ; lpm_counter:count_rtl_0|dffs[10] ; fin          ; fin         ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; lpm_counter:count_rtl_0|dffs[12] ; lpm_counter:count_rtl_0|dffs[12] ; fin          ; fin         ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; lpm_counter:count_rtl_0|dffs[2]  ; lpm_counter:count_rtl_0|dffs[12] ; fin          ; fin         ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; lpm_counter:count_rtl_0|dffs[3]  ; lpm_counter:count_rtl_0|dffs[12] ; fin          ; fin         ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; lpm_counter:count_rtl_0|dffs[4]  ; lpm_counter:count_rtl_0|dffs[12] ; fin          ; fin         ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; lpm_counter:count_rtl_0|dffs[5]  ; lpm_counter:count_rtl_0|dffs[12] ; fin          ; fin         ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; lpm_counter:count_rtl_0|dffs[11] ; lpm_counter:count_rtl_0|dffs[11] ; fin          ; fin         ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; lpm_counter:count_rtl_0|dffs[2]  ; lpm_counter:count_rtl_0|dffs[11] ; fin          ; fin         ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; lpm_counter:count_rtl_0|dffs[3]  ; lpm_counter:count_rtl_0|dffs[11] ; fin          ; fin         ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; lpm_counter:count_rtl_0|dffs[4]  ; lpm_counter:count_rtl_0|dffs[11] ; fin          ; fin         ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; lpm_counter:count_rtl_0|dffs[5]  ; lpm_counter:count_rtl_0|dffs[11] ; fin          ; fin         ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; lpm_counter:count_rtl_0|dffs[7]  ; lpm_counter:count_rtl_0|dffs[7]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; lpm_counter:count_rtl_0|dffs[2]  ; lpm_counter:count_rtl_0|dffs[7]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; lpm_counter:count_rtl_0|dffs[3]  ; lpm_counter:count_rtl_0|dffs[7]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; lpm_counter:count_rtl_0|dffs[4]  ; lpm_counter:count_rtl_0|dffs[7]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; lpm_counter:count_rtl_0|dffs[5]  ; lpm_counter:count_rtl_0|dffs[7]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; lpm_counter:count_rtl_0|dffs[0]  ; lpm_counter:count_rtl_0|dffs[0]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.100      ;
+; 5.900 ; lpm_counter:count_rtl_0|dffs[1]  ; lpm_counter:count_rtl_0|dffs[2]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; lpm_counter:count_rtl_0|dffs[0]  ; lpm_counter:count_rtl_0|dffs[2]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; lpm_counter:count_rtl_0|dffs[12] ; lpm_counter:count_rtl_0|dffs[2]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; lpm_counter:count_rtl_0|dffs[11] ; lpm_counter:count_rtl_0|dffs[2]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; lpm_counter:count_rtl_0|dffs[10] ; lpm_counter:count_rtl_0|dffs[2]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; lpm_counter:count_rtl_0|dffs[9]  ; lpm_counter:count_rtl_0|dffs[2]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; lpm_counter:count_rtl_0|dffs[8]  ; lpm_counter:count_rtl_0|dffs[2]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; lpm_counter:count_rtl_0|dffs[7]  ; lpm_counter:count_rtl_0|dffs[2]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; lpm_counter:count_rtl_0|dffs[6]  ; lpm_counter:count_rtl_0|dffs[2]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; lpm_counter:count_rtl_0|dffs[1]  ; lpm_counter:count_rtl_0|dffs[3]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; lpm_counter:count_rtl_0|dffs[0]  ; lpm_counter:count_rtl_0|dffs[3]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; lpm_counter:count_rtl_0|dffs[12] ; lpm_counter:count_rtl_0|dffs[3]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; lpm_counter:count_rtl_0|dffs[11] ; lpm_counter:count_rtl_0|dffs[3]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; lpm_counter:count_rtl_0|dffs[10] ; lpm_counter:count_rtl_0|dffs[3]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; lpm_counter:count_rtl_0|dffs[9]  ; lpm_counter:count_rtl_0|dffs[3]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; lpm_counter:count_rtl_0|dffs[8]  ; lpm_counter:count_rtl_0|dffs[3]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; lpm_counter:count_rtl_0|dffs[6]  ; lpm_counter:count_rtl_0|dffs[3]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; lpm_counter:count_rtl_0|dffs[1]  ; lpm_counter:count_rtl_0|dffs[4]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; lpm_counter:count_rtl_0|dffs[0]  ; lpm_counter:count_rtl_0|dffs[4]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; lpm_counter:count_rtl_0|dffs[0]  ; lpm_counter:count_rtl_0|dffs[5]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; lpm_counter:count_rtl_0|dffs[1]  ; lpm_counter:count_rtl_0|dffs[5]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; lpm_counter:count_rtl_0|dffs[10] ; lpm_counter:count_rtl_0|dffs[6]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; lpm_counter:count_rtl_0|dffs[9]  ; lpm_counter:count_rtl_0|dffs[6]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; lpm_counter:count_rtl_0|dffs[8]  ; lpm_counter:count_rtl_0|dffs[6]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; lpm_counter:count_rtl_0|dffs[12] ; lpm_counter:count_rtl_0|dffs[6]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; lpm_counter:count_rtl_0|dffs[11] ; lpm_counter:count_rtl_0|dffs[6]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; lpm_counter:count_rtl_0|dffs[1]  ; lpm_counter:count_rtl_0|dffs[6]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; lpm_counter:count_rtl_0|dffs[0]  ; lpm_counter:count_rtl_0|dffs[6]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; lpm_counter:count_rtl_0|dffs[7]  ; lpm_counter:count_rtl_0|dffs[6]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; lpm_counter:count_rtl_0|dffs[12] ; lpm_counter:count_rtl_0|dffs[9]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; lpm_counter:count_rtl_0|dffs[11] ; lpm_counter:count_rtl_0|dffs[9]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; lpm_counter:count_rtl_0|dffs[10] ; lpm_counter:count_rtl_0|dffs[9]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; lpm_counter:count_rtl_0|dffs[8]  ; lpm_counter:count_rtl_0|dffs[9]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; lpm_counter:count_rtl_0|dffs[6]  ; lpm_counter:count_rtl_0|dffs[9]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; lpm_counter:count_rtl_0|dffs[7]  ; lpm_counter:count_rtl_0|dffs[9]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; lpm_counter:count_rtl_0|dffs[1]  ; lpm_counter:count_rtl_0|dffs[9]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; lpm_counter:count_rtl_0|dffs[0]  ; lpm_counter:count_rtl_0|dffs[9]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; lpm_counter:count_rtl_0|dffs[12] ; lpm_counter:count_rtl_0|dffs[8]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; lpm_counter:count_rtl_0|dffs[11] ; lpm_counter:count_rtl_0|dffs[8]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; lpm_counter:count_rtl_0|dffs[10] ; lpm_counter:count_rtl_0|dffs[8]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; lpm_counter:count_rtl_0|dffs[9]  ; lpm_counter:count_rtl_0|dffs[8]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; lpm_counter:count_rtl_0|dffs[6]  ; lpm_counter:count_rtl_0|dffs[8]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; lpm_counter:count_rtl_0|dffs[7]  ; lpm_counter:count_rtl_0|dffs[8]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; lpm_counter:count_rtl_0|dffs[1]  ; lpm_counter:count_rtl_0|dffs[8]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; lpm_counter:count_rtl_0|dffs[0]  ; lpm_counter:count_rtl_0|dffs[8]  ; fin          ; fin         ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; lpm_counter:count_rtl_0|dffs[12] ; lpm_counter:count_rtl_0|dffs[10] ; fin          ; fin         ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; lpm_counter:count_rtl_0|dffs[11] ; lpm_counter:count_rtl_0|dffs[10] ; fin          ; fin         ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; lpm_counter:count_rtl_0|dffs[8]  ; lpm_counter:count_rtl_0|dffs[10] ; fin          ; fin         ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; lpm_counter:count_rtl_0|dffs[9]  ; lpm_counter:count_rtl_0|dffs[10] ; fin          ; fin         ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; lpm_counter:count_rtl_0|dffs[6]  ; lpm_counter:count_rtl_0|dffs[10] ; fin          ; fin         ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; lpm_counter:count_rtl_0|dffs[7]  ; lpm_counter:count_rtl_0|dffs[10] ; fin          ; fin         ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; lpm_counter:count_rtl_0|dffs[1]  ; lpm_counter:count_rtl_0|dffs[10] ; fin          ; fin         ; 0.000        ; 0.000      ; 7.200      ;
++-------+----------------------------------+----------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'P19'                                                                                                                               ;
++-------+------------------------------+------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                    ; To Node                      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------------+------------------------------+--------------+-------------+--------------+------------+------------+
+; 5.800 ; qa[0]~reg0                   ; qa[1]~reg0                   ; P19          ; P19         ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; qa[0]~reg0                   ; qa[0]~reg0                   ; P19          ; P19         ; 0.000        ; 0.000      ; 7.100      ;
+; 6.000 ; lpm_counter:qb_rtl_0|dffs[1] ; lpm_counter:qb_rtl_0|dffs[1] ; P19          ; P19         ; 0.000        ; 0.000      ; 7.300      ;
+; 6.000 ; lpm_counter:qb_rtl_0|dffs[0] ; lpm_counter:qb_rtl_0|dffs[1] ; P19          ; P19         ; 0.000        ; 0.000      ; 7.300      ;
+; 6.000 ; lpm_counter:qb_rtl_0|dffs[3] ; lpm_counter:qb_rtl_0|dffs[1] ; P19          ; P19         ; 0.000        ; 0.000      ; 7.300      ;
+; 6.000 ; qa[1]~reg0                   ; qa[1]~reg0                   ; P19          ; P19         ; 0.000        ; 0.000      ; 7.300      ;
+; 6.000 ; lpm_counter:qb_rtl_0|dffs[3] ; qa[1]~reg0                   ; P19          ; P19         ; 0.000        ; 0.000      ; 7.300      ;
+; 6.000 ; lpm_counter:qb_rtl_0|dffs[2] ; qa[1]~reg0                   ; P19          ; P19         ; 0.000        ; 0.000      ; 7.300      ;
+; 6.000 ; lpm_counter:qb_rtl_0|dffs[0] ; lpm_counter:qb_rtl_0|dffs[2] ; P19          ; P19         ; 0.000        ; 0.000      ; 7.300      ;
+; 6.000 ; lpm_counter:qb_rtl_0|dffs[2] ; lpm_counter:qb_rtl_0|dffs[2] ; P19          ; P19         ; 0.000        ; 0.000      ; 7.300      ;
+; 6.000 ; qa[1]~reg0                   ; lpm_counter:qb_rtl_0|dffs[2] ; P19          ; P19         ; 0.000        ; 0.000      ; 7.300      ;
+; 6.000 ; lpm_counter:qb_rtl_0|dffs[3] ; lpm_counter:qb_rtl_0|dffs[2] ; P19          ; P19         ; 0.000        ; 0.000      ; 7.300      ;
+; 6.000 ; lpm_counter:qb_rtl_0|dffs[1] ; lpm_counter:qb_rtl_0|dffs[2] ; P19          ; P19         ; 0.000        ; 0.000      ; 7.300      ;
+; 6.000 ; lpm_counter:qb_rtl_0|dffs[2] ; lpm_counter:qb_rtl_0|dffs[3] ; P19          ; P19         ; 0.000        ; 0.000      ; 7.300      ;
+; 6.000 ; lpm_counter:qb_rtl_0|dffs[3] ; lpm_counter:qb_rtl_0|dffs[3] ; P19          ; P19         ; 0.000        ; 0.000      ; 7.300      ;
+; 6.000 ; qa[1]~reg0                   ; lpm_counter:qb_rtl_0|dffs[3] ; P19          ; P19         ; 0.000        ; 0.000      ; 7.300      ;
+; 6.000 ; lpm_counter:qb_rtl_0|dffs[0] ; lpm_counter:qb_rtl_0|dffs[3] ; P19          ; P19         ; 0.000        ; 0.000      ; 7.300      ;
+; 6.000 ; lpm_counter:qb_rtl_0|dffs[1] ; lpm_counter:qb_rtl_0|dffs[3] ; P19          ; P19         ; 0.000        ; 0.000      ; 7.300      ;
+; 6.000 ; lpm_counter:qb_rtl_0|dffs[0] ; lpm_counter:qb_rtl_0|dffs[0] ; P19          ; P19         ; 0.000        ; 0.000      ; 7.300      ;
+; 6.000 ; lpm_counter:qb_rtl_0|dffs[3] ; lpm_counter:qb_rtl_0|dffs[0] ; P19          ; P19         ; 0.000        ; 0.000      ; 7.300      ;
+; 6.000 ; lpm_counter:qb_rtl_0|dffs[2] ; lpm_counter:qb_rtl_0|dffs[0] ; P19          ; P19         ; 0.000        ; 0.000      ; 7.300      ;
+; 6.000 ; qa[1]~reg0                   ; lpm_counter:qb_rtl_0|dffs[0] ; P19          ; P19         ; 0.000        ; 0.000      ; 7.300      ;
+; 6.000 ; lpm_counter:qb_rtl_0|dffs[1] ; lpm_counter:qb_rtl_0|dffs[0] ; P19          ; P19         ; 0.000        ; 0.000      ; 7.300      ;
+; 6.000 ; lpm_counter:qb_rtl_0|dffs[0] ; qa[0]~reg0                   ; P19          ; P19         ; 0.000        ; 0.000      ; 7.300      ;
+; 6.000 ; lpm_counter:qb_rtl_0|dffs[2] ; qa[0]~reg0                   ; P19          ; P19         ; 0.000        ; 0.000      ; 7.300      ;
+; 6.000 ; lpm_counter:qb_rtl_0|dffs[3] ; qa[0]~reg0                   ; P19          ; P19         ; 0.000        ; 0.000      ; 7.300      ;
+; 6.000 ; qa[1]~reg0                   ; qa[0]~reg0                   ; P19          ; P19         ; 0.000        ; 0.000      ; 7.300      ;
+; 6.000 ; lpm_counter:qb_rtl_0|dffs[1] ; qa[0]~reg0                   ; P19          ; P19         ; 0.000        ; 0.000      ; 7.300      ;
+; 9.900 ; qa[1]~reg0                   ; lpm_counter:qb_rtl_0|dffs[1] ; P19          ; P19         ; 0.000        ; 0.000      ; 11.200     ;
+; 9.900 ; lpm_counter:qb_rtl_0|dffs[1] ; qa[1]~reg0                   ; P19          ; P19         ; 0.000        ; 0.000      ; 11.200     ;
+; 9.900 ; lpm_counter:qb_rtl_0|dffs[2] ; lpm_counter:qb_rtl_0|dffs[1] ; P19          ; P19         ; 0.000        ; 0.000      ; 11.200     ;
+; 9.900 ; lpm_counter:qb_rtl_0|dffs[0] ; qa[1]~reg0                   ; P19          ; P19         ; 0.000        ; 0.000      ; 11.200     ;
++-------+------------------------------+------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'fin'                                                                                        ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                           ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------------+
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; fin   ; Rise       ; clk                              ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; fin   ; Rise       ; clk                              ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; fin   ; Rise       ; lpm_counter:count_rtl_0|dffs[0]  ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; fin   ; Rise       ; lpm_counter:count_rtl_0|dffs[0]  ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; fin   ; Rise       ; lpm_counter:count_rtl_0|dffs[10] ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; fin   ; Rise       ; lpm_counter:count_rtl_0|dffs[10] ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; fin   ; Rise       ; lpm_counter:count_rtl_0|dffs[11] ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; fin   ; Rise       ; lpm_counter:count_rtl_0|dffs[11] ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; fin   ; Rise       ; lpm_counter:count_rtl_0|dffs[12] ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; fin   ; Rise       ; lpm_counter:count_rtl_0|dffs[12] ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; fin   ; Rise       ; lpm_counter:count_rtl_0|dffs[1]  ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; fin   ; Rise       ; lpm_counter:count_rtl_0|dffs[1]  ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; fin   ; Rise       ; lpm_counter:count_rtl_0|dffs[2]  ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; fin   ; Rise       ; lpm_counter:count_rtl_0|dffs[2]  ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; fin   ; Rise       ; lpm_counter:count_rtl_0|dffs[3]  ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; fin   ; Rise       ; lpm_counter:count_rtl_0|dffs[3]  ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; fin   ; Rise       ; lpm_counter:count_rtl_0|dffs[4]  ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; fin   ; Rise       ; lpm_counter:count_rtl_0|dffs[4]  ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; fin   ; Rise       ; lpm_counter:count_rtl_0|dffs[5]  ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; fin   ; Rise       ; lpm_counter:count_rtl_0|dffs[5]  ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; fin   ; Rise       ; lpm_counter:count_rtl_0|dffs[6]  ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; fin   ; Rise       ; lpm_counter:count_rtl_0|dffs[6]  ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; fin   ; Rise       ; lpm_counter:count_rtl_0|dffs[7]  ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; fin   ; Rise       ; lpm_counter:count_rtl_0|dffs[7]  ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; fin   ; Rise       ; lpm_counter:count_rtl_0|dffs[8]  ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; fin   ; Rise       ; lpm_counter:count_rtl_0|dffs[8]  ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; fin   ; Rise       ; lpm_counter:count_rtl_0|dffs[9]  ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; fin   ; Rise       ; lpm_counter:count_rtl_0|dffs[9]  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; fin   ; Rise       ; clk|clk                          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; fin   ; Rise       ; clk|clk                          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; fin   ; Rise       ; count_rtl_0|dffs[0]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; fin   ; Rise       ; count_rtl_0|dffs[0]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; fin   ; Rise       ; count_rtl_0|dffs[10]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; fin   ; Rise       ; count_rtl_0|dffs[10]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; fin   ; Rise       ; count_rtl_0|dffs[11]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; fin   ; Rise       ; count_rtl_0|dffs[11]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; fin   ; Rise       ; count_rtl_0|dffs[12]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; fin   ; Rise       ; count_rtl_0|dffs[12]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; fin   ; Rise       ; count_rtl_0|dffs[1]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; fin   ; Rise       ; count_rtl_0|dffs[1]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; fin   ; Rise       ; count_rtl_0|dffs[2]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; fin   ; Rise       ; count_rtl_0|dffs[2]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; fin   ; Rise       ; count_rtl_0|dffs[3]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; fin   ; Rise       ; count_rtl_0|dffs[3]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; fin   ; Rise       ; count_rtl_0|dffs[4]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; fin   ; Rise       ; count_rtl_0|dffs[4]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; fin   ; Rise       ; count_rtl_0|dffs[5]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; fin   ; Rise       ; count_rtl_0|dffs[5]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; fin   ; Rise       ; count_rtl_0|dffs[6]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; fin   ; Rise       ; count_rtl_0|dffs[6]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; fin   ; Rise       ; count_rtl_0|dffs[7]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; fin   ; Rise       ; count_rtl_0|dffs[7]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; fin   ; Rise       ; count_rtl_0|dffs[8]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; fin   ; Rise       ; count_rtl_0|dffs[8]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; fin   ; Rise       ; count_rtl_0|dffs[9]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; fin   ; Rise       ; count_rtl_0|dffs[9]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; fin   ; Rise       ; fin|dataout                      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; fin   ; Rise       ; fin|dataout                      ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'P19'                                                                                    ;
++--------+--------------+----------------+------------------+-------+------------+------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                       ;
++--------+--------------+----------------+------------------+-------+------------+------------------------------+
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; P19   ; Rise       ; lpm_counter:qb_rtl_0|dffs[0] ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; P19   ; Rise       ; lpm_counter:qb_rtl_0|dffs[0] ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; P19   ; Rise       ; lpm_counter:qb_rtl_0|dffs[1] ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; P19   ; Rise       ; lpm_counter:qb_rtl_0|dffs[1] ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; P19   ; Rise       ; lpm_counter:qb_rtl_0|dffs[2] ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; P19   ; Rise       ; lpm_counter:qb_rtl_0|dffs[2] ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; P19   ; Rise       ; lpm_counter:qb_rtl_0|dffs[3] ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; P19   ; Rise       ; lpm_counter:qb_rtl_0|dffs[3] ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; P19   ; Rise       ; qa[0]~reg0                   ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; P19   ; Rise       ; qa[0]~reg0                   ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; P19   ; Rise       ; qa[1]~reg0                   ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; P19   ; Rise       ; qa[1]~reg0                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; P19   ; Rise       ; P19|dataout                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; P19   ; Rise       ; P19|dataout                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; P19   ; Rise       ; clk_h~9bal|[1]               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; P19   ; Rise       ; clk_h~9bal|[1]               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; P19   ; Rise       ; clk_h~9bal|dataout           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; P19   ; Rise       ; clk_h~9bal|dataout           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; P19   ; Rise       ; qa[0]~reg0|[6]               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; P19   ; Rise       ; qa[0]~reg0|[6]               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; P19   ; Rise       ; qa[1]~reg0|[6]               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; P19   ; Rise       ; qa[1]~reg0|[6]               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; P19   ; Rise       ; qb_rtl_0|dffs[0]|[5]         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; P19   ; Rise       ; qb_rtl_0|dffs[0]|[5]         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; P19   ; Rise       ; qb_rtl_0|dffs[1]|[4]         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; P19   ; Rise       ; qb_rtl_0|dffs[1]|[4]         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; P19   ; Rise       ; qb_rtl_0|dffs[2]|[5]         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; P19   ; Rise       ; qb_rtl_0|dffs[2]|[5]         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; P19   ; Rise       ; qb_rtl_0|dffs[3]|[5]         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; P19   ; Rise       ; qb_rtl_0|dffs[3]|[5]         ;
++--------+--------------+----------------+------------------+-------+------------+------------------------------+
+
+
++-------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'clk'                                                                      ;
++--------+--------------+----------------+------------------+-------+------------+----------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target         ;
++--------+--------------+----------------+------------------+-------+------------+----------------+
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; clk   ; Rise       ; OneHz_in_d     ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; clk   ; Rise       ; OneHz_in_d     ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; clk   ; Rise       ; P20_sel_d      ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; clk   ; Rise       ; P20_sel_d      ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; clk   ; Rise       ; P21_d          ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; clk   ; Rise       ; P21_d          ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; clk   ; Rise       ; P5_d           ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; clk   ; Rise       ; P5_d           ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; clk   ; Rise       ; P7_d           ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; clk   ; Rise       ; P7_d           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; OneHz_in_d|[1] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; OneHz_in_d|[1] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; P20_sel_d|[1]  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; P20_sel_d|[1]  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; P21_d|[1]      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; P21_d|[1]      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; P5_d|[1]       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; P5_d|[1]       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; P7_d|[1]       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; P7_d|[1]       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk|dataout    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk|dataout    ;
++--------+--------------+----------------+------------------+-------+------------+----------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; P5        ; clk        ; 5.000 ; 5.000 ; Rise       ; clk             ;
+; P7        ; clk        ; 5.000 ; 5.000 ; Rise       ; clk             ;
+; P20_sel   ; clk        ; 5.000 ; 5.000 ; Rise       ; clk             ;
+; P21       ; clk        ; 5.000 ; 5.000 ; Rise       ; clk             ;
+; P22       ; clk        ; 5.000 ; 5.000 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; P5        ; clk        ; -0.800 ; -0.800 ; Rise       ; clk             ;
+; P7        ; clk        ; -0.800 ; -0.800 ; Rise       ; clk             ;
+; P20_sel   ; clk        ; -0.800 ; -0.800 ; Rise       ; clk             ;
+; P21       ; clk        ; -0.800 ; -0.800 ; Rise       ; clk             ;
+; P22       ; clk        ; -0.800 ; -0.800 ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; qa[*]     ; P19        ; 16.600 ; 16.600 ; Rise       ; P19             ;
+;  qa[0]    ; P19        ; 16.600 ; 16.600 ; Rise       ; P19             ;
+;  qa[1]    ; P19        ; 16.600 ; 16.600 ; Rise       ; P19             ;
+; qb[*]     ; P19        ; 16.600 ; 16.600 ; Rise       ; P19             ;
+;  qb[0]    ; P19        ; 16.600 ; 16.600 ; Rise       ; P19             ;
+;  qb[1]    ; P19        ; 16.600 ; 16.600 ; Rise       ; P19             ;
+;  qb[2]    ; P19        ; 16.600 ; 16.600 ; Rise       ; P19             ;
+;  qb[3]    ; P19        ; 16.600 ; 16.600 ; Rise       ; P19             ;
+; P4        ; clk        ; 15.000 ; 15.000 ; Rise       ; clk             ;
+; P6        ; clk        ; 15.000 ; 15.000 ; Rise       ; clk             ;
+; P8        ; clk        ; 15.000 ; 15.000 ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; qa[*]     ; P19        ; 16.600 ; 16.600 ; Rise       ; P19             ;
+;  qa[0]    ; P19        ; 16.600 ; 16.600 ; Rise       ; P19             ;
+;  qa[1]    ; P19        ; 16.600 ; 16.600 ; Rise       ; P19             ;
+; qb[*]     ; P19        ; 16.600 ; 16.600 ; Rise       ; P19             ;
+;  qb[0]    ; P19        ; 16.600 ; 16.600 ; Rise       ; P19             ;
+;  qb[1]    ; P19        ; 16.600 ; 16.600 ; Rise       ; P19             ;
+;  qb[2]    ; P19        ; 16.600 ; 16.600 ; Rise       ; P19             ;
+;  qb[3]    ; P19        ; 16.600 ; 16.600 ; Rise       ; P19             ;
+; P4        ; clk        ; 15.000 ; 15.000 ; Rise       ; clk             ;
+; P6        ; clk        ; 15.000 ; 15.000 ; Rise       ; clk             ;
+; P8        ; clk        ; 15.000 ; 15.000 ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; fin      ; 1        ; 1        ; 0        ; 0        ;
+; fin        ; fin      ; 349      ; 0        ; 0        ; 0        ;
+; P19        ; P19      ; 82       ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; fin      ; 1        ; 1        ; 0        ; 0        ;
+; fin        ; fin      ; 349      ; 0        ; 0        ; 0        ;
+; P19        ; P19      ; 82       ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 6     ; 6    ;
+; Unconstrained Input Port Paths  ; 11    ; 11   ;
+; Unconstrained Output Ports      ; 9     ; 9    ;
+; Unconstrained Output Port Paths ; 14    ; 14   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+    Info: Processing started: Mon Oct 24 16:55:05 2022
+Info: Command: quartus_sta vl2 -c vl2
+Info: qsta_default_script.tcl version: #1
+Info (11104): Parallel Compilation has detected 12 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 6 of the 6 physical processors detected instead.
+Info (306004): Started post-fitting delay annotation
+Info (306005): Delay annotation completed successfully
+Warning (335095): TimeQuest Timing Analyzer does not support the analysis of latches as synchronous elements for the currently selected device family.
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'vl2.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name fin fin
+    Info (332105): create_clock -period 1.000 -name clk clk
+    Info (332105): create_clock -period 1.000 -name P19 P19
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -13.100
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):   -13.100       -63.900 P19 
+    Info (332119):   -10.000      -131.900 fin 
+Info (332146): Worst-case hold slack is 0.600
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.600         0.000 fin 
+    Info (332119):     5.800         0.000 P19 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.500
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -3.500       -98.000 fin 
+    Info (332119):    -3.500       -42.000 P19 
+    Info (332119):    -3.500       -35.000 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 4550 megabytes
+    Info: Processing ended: Mon Oct 24 16:55:10 2022
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:01
+
+

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Created by Liquid XML 2008 (www.liquid-technologies.com) for Altera-->
+<ProgramExecution xmlns:xs="http://www.w3.org/2001/XMLSchema-instance">
+	<QuartusExecution>
+		<AddressBits>64</AddressBits>
+		<Compilation>
+			<CompileID>0</CompileID>
+			<DeviceFamily/>
+			<IncrementalCompilation/>
+			<TopLevelEntityName/>
+		</Compilation>
+		<DateInvoked>2022/10/24 15:42:41</DateInvoked>
+		<ElapsedTime>4460</ElapsedTime>
+		<IP>120.114.66.69</IP>
+		<IsInternal>false</IsInternal>
+		<IsQt>true</IsQt>
+		<License>
+			<Edition>Web Edition</Edition>
+			<LicenseHostID/>
+		</License>
+		<Machine>
+			<CPUCountLogical>12</CPUCountLogical>
+			<CPUCountPhysical>1</CPUCountPhysical>
+			<CPUSpeed>3096</CPUSpeed>
+			<Hostname>user-052</Hostname>
+			<NIC>
+				<Address>50ebf6c9633a</Address>
+			</NIC>
+			<OS>Windows 7</OS>
+			<OSAddressBits>64</OSAddressBits>
+			<OSVersion>6.2</OSVersion>
+			<Platform>windows</Platform>
+			<ScreenResolution>unknown</ScreenResolution>
+			<TotalPhysicalRAM>8040</TotalPhysicalRAM>
+			<TotalVirtualRAM>1920</TotalVirtualRAM>
+		</Machine>
+		<Name>quartus</Name>
+		<PeakMemoryUsed>4748</PeakMemoryUsed>
+		<ProjectRevision>
+			<ProjectName/>
+			<Revision/>
+		</ProjectRevision>
+		<QuartusGUISummary>
+			<QuartusGUIEditorUsage>
+				<EditorName>Programmer</EditorName>
+				<UseCount>4</UseCount>
+			</QuartusGUIEditorUsage>
+			<QuartusGUIEditorUsage>
+				<EditorName>Report</EditorName>
+				<UseCount>1</UseCount>
+			</QuartusGUIEditorUsage>
+			<QuartusGUIEditorUsage>
+				<EditorName>Text Editor</EditorName>
+				<UseCount>1</UseCount>
+			</QuartusGUIEditorUsage>
+			<QuartusGUIEditorUsage>
+				<EditorName>Pin Planner</EditorName>
+				<UseCount>1</UseCount>
+			</QuartusGUIEditorUsage>
+			<QuartusGUIEditorUsage>
+				<EditorName>Quartus II 64-Bit</EditorName>
+				<UseCount>1</UseCount>
+			</QuartusGUIEditorUsage>
+			<QuartusGUIMenuUsage>
+				<MenuName>Programmer</MenuName>
+				<MenuTriggeredCount>4</MenuTriggeredCount>
+			</QuartusGUIMenuUsage>
+			<QuartusGUIMenuUsage>
+				<MenuName>Selection Tool</MenuName>
+				<MenuTriggeredCount>1</MenuTriggeredCount>
+			</QuartusGUIMenuUsage>
+			<QuartusGUIMenuUsage>
+				<MenuName>Compilation Report</MenuName>
+				<MenuTriggeredCount>15</MenuTriggeredCount>
+			</QuartusGUIMenuUsage>
+			<QuartusGUIMenuUsage>
+				<MenuName>Copy</MenuName>
+				<MenuTriggeredCount>5</MenuTriggeredCount>
+			</QuartusGUIMenuUsage>
+			<QuartusGUIMenuUsage>
+				<MenuName>Paste</MenuName>
+				<MenuTriggeredCount>10</MenuTriggeredCount>
+			</QuartusGUIMenuUsage>
+			<QuartusGUIMenuUsage>
+				<MenuName>Pin Planner</MenuName>
+				<MenuTriggeredCount>1</MenuTriggeredCount>
+			</QuartusGUIMenuUsage>
+			<QuartusGUIMenuUsage>
+				<MenuName>Save</MenuName>
+				<MenuTriggeredCount>6</MenuTriggeredCount>
+			</QuartusGUIMenuUsage>
+			<QuartusGUIMenuUsage>
+				<MenuName>Start Compilation</MenuName>
+				<MenuTriggeredCount>5</MenuTriggeredCount>
+			</QuartusGUIMenuUsage>
+			<QuartusGUISessionID>88974387929914.166659736113128</QuartusGUISessionID>
+		</QuartusGUISummary>
+		<QuartusInstallation>
+			<InstallationID>88974380293202.164782963214028</InstallationID>
+			<Version>
+				<Build>156</Build>
+				<BuildSite>SJ</BuildSite>
+				<BuildSuffix/>
+				<Edition>Web Edition</Edition>
+				<ServicePack>0</ServicePack>
+				<VersionNumber>13</VersionNumber>
+			</Version>
+		</QuartusInstallation>
+		<QuartusUser>
+			<AlteraUserName/>
+			<FAEContactName/>
+			<TalkbackStatus>
+				<DateSet/>
+				<TalkbackOn>true</TalkbackOn>
+			</TalkbackStatus>
+			<UserID>88974380293202.16478296380224</UserID>
+			<UserName>user</UserName>
+		</QuartusUser>
+	</QuartusExecution>
+	<SchemaVersion>schema_2013-01-18</SchemaVersion>
+</ProgramExecution>

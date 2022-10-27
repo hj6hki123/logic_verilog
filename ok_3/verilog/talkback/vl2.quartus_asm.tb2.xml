@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Created by Liquid XML 2008 (www.liquid-technologies.com) for Altera-->
+<ProgramExecution xmlns:xs="http://www.w3.org/2001/XMLSchema-instance">
+	<QuartusExecution>
+		<AddressBits>64</AddressBits>
+		<Compilation>
+			<CompileID>88974387929914.166660168606124</CompileID>
+			<DeviceFamily/>
+			<IncrementalCompilation>FULL_INCREMENTAL_COMPILATION</IncrementalCompilation>
+			<TopLevelEntityName>vl2</TopLevelEntityName>
+		</Compilation>
+		<ConfigurationSummary>
+			<AdvancedOptions>false</AdvancedOptions>
+			<ConfigurationDevice/>
+			<ConfigurationScheme>Illegal Configuration Scheme</ConfigurationScheme>
+			<Successful>false</Successful>
+		</ConfigurationSummary>
+		<DateInvoked>2022/10/24 16:55:03</DateInvoked>
+		<ElapsedTime>1</ElapsedTime>
+		<IP>120.114.66.69</IP>
+		<IsInternal>false</IsInternal>
+		<IsQt>false</IsQt>
+		<License>
+			<Edition>Web Edition</Edition>
+			<LicenseHostID/>
+		</License>
+		<Machine>
+			<CPUCountLogical>12</CPUCountLogical>
+			<CPUCountPhysical>1</CPUCountPhysical>
+			<CPUSpeed>3096</CPUSpeed>
+			<Hostname>user-052</Hostname>
+			<NIC>
+				<Address>50ebf6c9633a</Address>
+			</NIC>
+			<OS>Windows 7</OS>
+			<OSAddressBits>64</OSAddressBits>
+			<OSVersion>6.2</OSVersion>
+			<Platform>windows</Platform>
+			<ScreenResolution>unknown</ScreenResolution>
+			<TotalPhysicalRAM>8040</TotalPhysicalRAM>
+			<TotalVirtualRAM>1920</TotalVirtualRAM>
+		</Machine>
+		<Name>quartus_asm</Name>
+		<PeakMemoryUsed>4516</PeakMemoryUsed>
+		<ProjectRevision>
+			<ProjectName>vl2</ProjectName>
+			<Revision>vl2</Revision>
+		</ProjectRevision>
+		<QuartusInstallation>
+			<InstallationID>88974380293202.164782963214028</InstallationID>
+			<Version>
+				<Build>156</Build>
+				<BuildSite>SJ</BuildSite>
+				<BuildSuffix/>
+				<Edition>Web Edition</Edition>
+				<ServicePack>0</ServicePack>
+				<VersionNumber>13</VersionNumber>
+			</Version>
+		</QuartusInstallation>
+		<QuartusUser>
+			<AlteraUserName/>
+			<FAEContactName/>
+			<TalkbackStatus>
+				<DateSet/>
+				<TalkbackOn>true</TalkbackOn>
+			</TalkbackStatus>
+			<UserID>88974380293202.16478296380224</UserID>
+			<UserName>user</UserName>
+		</QuartusUser>
+	</QuartusExecution>
+	<SchemaVersion>schema_2013-01-18</SchemaVersion>
+</ProgramExecution>

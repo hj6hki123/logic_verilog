@@ -1,0 +1,33 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'P19'
+Slack : -13.100
+TNS   : -63.900
+
+Type  : Setup 'fin'
+Slack : -10.000
+TNS   : -131.900
+
+Type  : Hold 'fin'
+Slack : 0.600
+TNS   : 0.000
+
+Type  : Hold 'P19'
+Slack : 5.800
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'fin'
+Slack : -3.500
+TNS   : -98.000
+
+Type  : Minimum Pulse Width 'P19'
+Slack : -3.500
+TNS   : -42.000
+
+Type  : Minimum Pulse Width 'clk'
+Slack : -3.500
+TNS   : -35.000
+
+------------------------------------------------------------
