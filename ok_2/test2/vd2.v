@@ -38,17 +38,17 @@ always@(posedge clk)begin
 			h2code <= 0;
 		else
 			h2code <= h2code+1;
-	end else if(colum == 3'b110)
-		keycode <=  {2'b00 , h2code};
-	else if(colum == 3'b101)
-		keycode <=  {2'b01 , h2code};
-	else if(colum == 3'b011)
-		keycode <=  {2'b10 , h2code};
+	end else if(colum == 3'b110)		//scan colum_input (first)
+		keycode <=  {2'b00 , h2code}; 	//output BCD CODE {00,+1~3}
+	else if(colum == 3'b101)		//scan colum_input (second)
+		keycode <=  {2'b01 , h2code};	//output BCD CODE {01,+1~3} = b'0100 = d'4 +1~3
+	else if(colum == 3'b011)		//scan colum_input (third)
+		keycode <=  {2'b10 , h2code};	//output BCD CODE {10,+1~3} = b'1000 = d'8 +1~3
 end
 
 always@(h2code)begin
-	case(h2code)
-      2'b00 : scan <= 4'b1110;
+	case(h2code)          
+      2'b00 : scan <= 4'b1110; //shifting scan row from 1 to 4
       2'b01 : scan <= 4'b1101;
       2'b10 : scan <= 4'b1011;
       2'b11 : scan <= 4'b0111;
