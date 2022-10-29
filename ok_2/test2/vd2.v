@@ -7,7 +7,7 @@ output[3:0] keycode;
 output	pulse_o1, pulse_o2, P1; 
 
 wire press_out;
-reg clk, input_db;
+wire clk;
 reg [1:0] h2code;
 reg [3:0]keycode;
 reg [15:0] count;
@@ -20,16 +20,9 @@ assign P1 = ~(P13 | P14);
 assign press_out = (colum[2] | colum[1] | colum[0]);
 assign pulse_o1 = register_shift[2];
 assign pulse_o2 = register_shift[3];
+assign clk = count[15];
 
-always@(posedge fin)begin
-
-if(count>=8000)begin
-	clk <=clk^1'b1;
-	count<=0;
-end
-else 
-	count <= count + 1'b1;
-end
+always@(posedge fin)count <= count + 1'b1;
 
 
 always@(posedge clk)begin
@@ -54,12 +47,12 @@ always@(h2code)begin
       2'b11 : scan <= 4'b1000;
 	endcase
 end
-always @(negedge clk) input_db<= press_out;
-always @(posedge clk,posedge input_db)begin
-if(input_db)
-	register_shift <= 4'b0001;
+
+always @(posedge clk,posedge  press_out)begin
+if( press_out)
+	register_shift <= 4'b0001; 
 else
-	register_shift <= {register_shift[2:0],1'b0};
+	register_shift <= {register_shift[2:0],1'b0}; //shift 1 left  
 
 end
 
