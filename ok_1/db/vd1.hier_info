@@ -1,0 +1,29 @@
+|vd1
+clk => ENB_ScanSpeed.CLK
+clk => ENB_CountSpeed.CLK
+p3_rst => code1000[0].ACLR
+p3_rst => code1000[1].ACLR
+p3_rst => code1000[2].ACLR
+p3_rst => code1000[3].ACLR
+p3_rst => code100[0].ACLR
+p3_rst => code100[1].ACLR
+p3_rst => code100[2].ACLR
+p3_rst => code100[3].ACLR
+p3_rst => code10[0].ACLR
+p3_rst => code10[1].ACLR
+p3_rst => code10[2].ACLR
+p3_rst => code10[3].ACLR
+p3_rst => code1[0].ACLR
+p3_rst => code1[1].ACLR
+p3_rst => code1[2].ACLR
+p3_rst => code1[3].ACLR
+p2_CountSpeed => ENB_CountSpeed.DATAIN
+p4_ScanSpeed => ENB_ScanSpeed.DATAIN
+bcdcode[0] <= bcdcode[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+bcdcode[1] <= bcdcode[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+bcdcode[2] <= bcdcode[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+bcdcode[3] <= bcdcode[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+scan[0] <= scan[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+scan[1] <= scan[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
