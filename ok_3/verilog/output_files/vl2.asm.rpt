@@ -1,6 +1,6 @@
 Assembler report for vl2
-Mon Oct 24 16:55:04 2022
-Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+Wed Nov 02 18:00:15 2022
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
 ---------------------
@@ -10,7 +10,7 @@ Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: F:/logic_S/verilog/output_files/vl2.pof
+  5. Assembler Device Options: C:/Users/hj6hk/OneDrive/桌面/gitinitsd/logic_verilog/ok_3/verilog/output_files/vl2.pof
   6. Assembler Messages
 
 
@@ -18,7 +18,7 @@ Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 1991-2013 Altera Corporation
+Copyright (C) 1991-2010 Altera Corporation
 Your use of Altera Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
@@ -37,7 +37,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Mon Oct 24 16:55:04 2022 ;
+; Assembler Status      ; Successful - Wed Nov 02 18:00:15 2022 ;
 ; Revision Name         ; vl2                                   ;
 ; Top-level Entity Name ; vl2                                   ;
 ; Family                ; MAX3000A                              ;
@@ -74,39 +74,39 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+----------+---------------+
 
 
-+-----------------------------------------+
-; Assembler Generated Files               ;
-+-----------------------------------------+
-; File Name                               ;
-+-----------------------------------------+
-; F:/logic_S/verilog/output_files/vl2.pof ;
-+-----------------------------------------+
++------------------------------------------------------------------------------------------+
+; Assembler Generated Files                                                                ;
++------------------------------------------------------------------------------------------+
+; File Name                                                                                ;
++------------------------------------------------------------------------------------------+
+; C:/Users/hj6hk/OneDrive/桌面/gitinitsd/logic_verilog/ok_3/verilog/output_files/vl2.pof ;
++------------------------------------------------------------------------------------------+
 
 
-+-------------------------------------------------------------------+
-; Assembler Device Options: F:/logic_S/verilog/output_files/vl2.pof ;
-+----------------+--------------------------------------------------+
-; Option         ; Setting                                          ;
-+----------------+--------------------------------------------------+
-; Device         ; EPM3064ALC44-10                                  ;
-; JTAG usercode  ; 0x00000000                                       ;
-; Checksum       ; 0x000D2621                                       ;
-+----------------+--------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/hj6hk/OneDrive/桌面/gitinitsd/logic_verilog/ok_3/verilog/output_files/vl2.pof ;
++----------------+---------------------------------------------------------------------------------------------------+
+; Option         ; Setting                                                                                           ;
++----------------+---------------------------------------------------------------------------------------------------+
+; Device         ; EPM3064ALC44-10                                                                                   ;
+; JTAG usercode  ; 0x00000000                                                                                        ;
+; Checksum       ; 0x000D2615                                                                                        ;
++----------------+---------------------------------------------------------------------------------------------------+
 
 
 +--------------------+
 ; Assembler Messages ;
 +--------------------+
 Info: *******************************************************************
-Info: Running Quartus II 64-Bit Assembler
-    Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-    Info: Processing started: Mon Oct 24 16:55:03 2022
+Info: Running Quartus II Assembler
+    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+    Info: Processing started: Wed Nov 02 18:00:15 2022
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off vl2 -c vl2
-Info (115030): Assembler is generating device programming files
-Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4516 megabytes
-    Info: Processing ended: Mon Oct 24 16:55:04 2022
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
+Info: Assembler is generating device programming files
+Info: Quartus II Assembler was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 183 megabytes
+    Info: Processing ended: Wed Nov 02 18:00:15 2022
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
 
 

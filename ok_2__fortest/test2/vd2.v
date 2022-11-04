@@ -1,0 +1,70 @@
+module vd2 (fin,enable,P13,P14,colum,scan,keycode,pulse_o1,pulse_o2,P1);
+  input fin,enable,P13,P14;
+  input[2:0] colum ;
+
+  output[3:0] scan;
+  output[3:0] keycode;
+  output pulse_o1, pulse_o2, P1;
+
+  wire press_out;
+  wire clk;
+  reg [1:0] h2code;
+  reg [3:0]keycode;
+  reg [15:0] count;
+  reg [3:0]scan;
+
+
+reg qa,qb,qc,qd,input_db;
+	
+
+  assign P1 = ~(P13 | P14);
+  assign press_out = ~(colum[2] & colum[1] & colum[0]);
+  assign clk = count[15];
+
+  always@(posedge fin)count <= count + 1'b1;
+
+
+  always@(posedge clk)
+  begin
+    if(colum == 3'b111)
+    begin
+      if(h2code>=3)
+        h2code <= 0;
+      else
+        h2code <= h2code+1'b1;
+    end
+    else if(colum == 3'b110)		//scan colum_input (first)
+      keycode <=  {2'b00 , h2code}; 	//output BCD CODE {00,+1~3}
+    else if(colum == 3'b101)		//scan colum_input (second)
+      keycode <=  {2'b01 , h2code};	//output BCD CODE {01,+1~3} = b'0100 = d'4 +1~3
+    else if(colum == 3'b011)		//scan colum_input (third)
+      keycode <=  {2'b10 , h2code};	//output BCD CODE {10,+1~3} = b'1000 = d'8 +1~3
+  end
+
+  always@(h2code)
+  begin
+    case(h2code)
+      2'b00 :
+        scan <= 4'b1110; //shifting scan row from 1 to 4
+      2'b01 :
+        scan <= 4'b1101;
+      2'b10 :
+        scan <= 4'b1011;
+      2'b11 :
+        scan <= 4'b0111;
+    endcase
+  end
+
+  always@(negedge clk)input_db <= press_out;
+  always @(posedge clk)
+  begin
+    qa <= input_db;
+    qb <= qa;
+    qc <= pulse_o1 ;
+    qd <= qc;
+
+  end
+assign pulse_o1 = qa&(~qb);
+assign pulse_o2 = qc&(~qd);
+
+endmodule

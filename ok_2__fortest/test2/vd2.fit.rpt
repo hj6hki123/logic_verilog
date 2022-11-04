@@ -1,0 +1,450 @@
+Fitter report for vd2
+Fri Nov 04 11:38:53 2022
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Fitter Summary
+  3. Fitter Settings
+  4. Parallel Compilation
+  5. Pin-Out File
+  6. Fitter Resource Usage Summary
+  7. Input Pins
+  8. Output Pins
+  9. All Package Pins
+ 10. I/O Standard
+ 11. Dedicated Inputs I/O
+ 12. Output Pin Default Load For Reported TCO
+ 13. Fitter Resource Utilization by Entity
+ 14. Control Signals
+ 15. Global & Other Fast Signals
+ 16. Non-Global High Fan-Out Signals
+ 17. Interconnect Usage Summary
+ 18. LAB Macrocells
+ 19. Shareable Expander
+ 20. Logic Cell Interconnection
+ 21. Fitter Device Options
+ 22. Fitter Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------+
+; Fitter Summary                                                       ;
++-----------------------+----------------------------------------------+
+; Fitter Status         ; Successful - Fri Nov 04 11:38:53 2022        ;
+; Quartus II Version    ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
+; Revision Name         ; vd2                                          ;
+; Top-level Entity Name ; vd2                                          ;
+; Family                ; MAX3000A                                     ;
+; Device                ; EPM3064ALC44-10                              ;
+; Timing Models         ; Final                                        ;
+; Total macrocells      ; 34 / 64 ( 53 % )                             ;
+; Total pins            ; 22 / 34 ( 65 % )                             ;
++-----------------------+----------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Fitter Settings                                                                                              ;
++----------------------------------------------------------------------------+-----------------+---------------+
+; Option                                                                     ; Setting         ; Default Value ;
++----------------------------------------------------------------------------+-----------------+---------------+
+; Device                                                                     ; EPM3064ALC44-10 ;               ;
+; Use smart compilation                                                      ; Off             ; Off           ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On              ; On            ;
+; Enable compact report table                                                ; Off             ; Off           ;
+; Use TimeQuest Timing Analyzer                                              ; Off             ; Off           ;
+; Optimize Timing for ECOs                                                   ; Off             ; Off           ;
+; Regenerate full fit report during ECO compiles                             ; Off             ; Off           ;
+; Optimize IOC Register Placement for Timing                                 ; On              ; On            ;
+; Limit to One Fitting Attempt                                               ; Off             ; Off           ;
+; Fitter Initial Placement Seed                                              ; 1               ; 1             ;
+; Slow Slew Rate                                                             ; Off             ; Off           ;
+; Fitter Effort                                                              ; Auto Fit        ; Auto Fit      ;
+; Force Fitter to Avoid Periphery Placement Warnings                         ; Off             ; Off           ;
+; Use Best Effort Settings for Compilation                                   ; Off             ; Off           ;
++----------------------------------------------------------------------------+-----------------+---------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 6      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------+
+; Pin-Out File ;
++--------------+
+The pin-out file can be found in C:/Users/hj6hk/OneDrive/桌面/gitinitsd/logic_verilog/ok_2__fortest/test2/vd2.pin.
+
+
++---------------------------------------------------------------------+
+; Fitter Resource Usage Summary                                       ;
++-----------------------------------+---------------------------------+
+; Resource                          ; Usage                           ;
++-----------------------------------+---------------------------------+
+; Logic cells                       ; 34 / 64 ( 53 % )                ;
+; Registers                         ; 27 / 64 ( 42 % )                ;
+; Number of pterms used             ; 58                              ;
+; User inserted logic elements      ; 0                               ;
+; I/O pins                          ; 22 / 34 ( 65 % )                ;
+;     -- Clock pins                 ; 1 / 2 ( 50 % )                  ;
+;     -- Dedicated input pins       ; 0 / 2 ( 0 % )                   ;
+; Global signals                    ; 1                               ;
+; Shareable expanders               ; 4 / 64 ( 6 % )                  ;
+; Parallel expanders                ; 0 / 60 ( 0 % )                  ;
+; Cells using turbo bit             ; 34 / 64 ( 53 % )                ;
+; Maximum fan-out node              ; fin                             ;
+; Maximum fan-out                   ; 16                              ;
+; Highest non-global fan-out signal ; lpm_counter:count_rtl_0|dffs[0] ;
+; Highest non-global fan-out        ; 15                              ;
+; Total fan-out                     ; 228                             ;
+; Average fan-out                   ; 3.80                            ;
++-----------------------------------+---------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Input Pins                                                                                                                    ;
++----------+-------+----------+-----+-----------------------+--------------------+--------+--------------+----------------------+
+; Name     ; Pin # ; I/O Bank ; LAB ; Combinational Fan-Out ; Registered Fan-Out ; Global ; I/O Standard ; Location assigned by ;
++----------+-------+----------+-----+-----------------------+--------------------+--------+--------------+----------------------+
+; P13      ; 37    ; --       ; 4   ; 1                     ; 0                  ; no     ; 3.3-V LVTTL  ; User                 ;
+; P14      ; 39    ; --       ; 4   ; 1                     ; 0                  ; no     ; 3.3-V LVTTL  ; User                 ;
+; colum[0] ; 31    ; --       ; 3   ; 10                    ; 0                  ; no     ; 3.3-V LVTTL  ; User                 ;
+; colum[1] ; 28    ; --       ; 3   ; 10                    ; 0                  ; no     ; 3.3-V LVTTL  ; User                 ;
+; colum[2] ; 34    ; --       ; 4   ; 10                    ; 0                  ; no     ; 3.3-V LVTTL  ; User                 ;
+; enable   ; 4     ; --       ; 1   ; 0                     ; 0                  ; no     ; 3.3-V LVTTL  ; Fitter               ;
+; fin      ; 43    ; --       ; --  ; 16                    ; 0                  ; yes    ; 3.3-V LVTTL  ; User                 ;
++----------+-------+----------+-----+-----------------------+--------------------+--------+--------------+----------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Output Pins                                                                                                                                                                                    ;
++------------+-------+----------+-----+-----------------+----------------+------------+---------------+--------------+----------------------+-------+----------------------+---------------------+
+; Name       ; Pin # ; I/O Bank ; LAB ; Output Register ; Slow Slew Rate ; Open Drain ; TRI Primitive ; I/O Standard ; Location assigned by ; Load  ; Output Enable Source ; Output Enable Group ;
++------------+-------+----------+-----+-----------------+----------------+------------+---------------+--------------+----------------------+-------+----------------------+---------------------+
+; P1         ; 33    ; --       ; 4   ; no              ; no             ; no         ; no            ; 3.3-V LVTTL  ; User                 ; 10 pF ; -                    ; -                   ;
+; keycode[0] ; 24    ; --       ; 3   ; no              ; no             ; no         ; no            ; 3.3-V LVTTL  ; User                 ; 10 pF ; -                    ; -                   ;
+; keycode[1] ; 27    ; --       ; 3   ; no              ; no             ; no         ; no            ; 3.3-V LVTTL  ; User                 ; 10 pF ; -                    ; -                   ;
+; keycode[2] ; 29    ; --       ; 3   ; no              ; no             ; no         ; no            ; 3.3-V LVTTL  ; User                 ; 10 pF ; -                    ; -                   ;
+; keycode[3] ; 25    ; --       ; 3   ; no              ; no             ; no         ; no            ; 3.3-V LVTTL  ; User                 ; 10 pF ; -                    ; -                   ;
+; pulse_o1   ; 26    ; --       ; 3   ; no              ; no             ; no         ; no            ; 3.3-V LVTTL  ; User                 ; 10 pF ; -                    ; -                   ;
+; pulse_o2   ; 16    ; --       ; 2   ; no              ; no             ; no         ; no            ; 3.3-V LVTTL  ; User                 ; 10 pF ; -                    ; -                   ;
+; scan[0]    ; 21    ; --       ; 2   ; no              ; no             ; no         ; no            ; 3.3-V LVTTL  ; User                 ; 10 pF ; -                    ; -                   ;
+; scan[1]    ; 41    ; --       ; 4   ; no              ; no             ; no         ; no            ; 3.3-V LVTTL  ; User                 ; 10 pF ; -                    ; -                   ;
+; scan[2]    ; 19    ; --       ; 2   ; no              ; no             ; no         ; no            ; 3.3-V LVTTL  ; User                 ; 10 pF ; -                    ; -                   ;
+; scan[3]    ; 40    ; --       ; 4   ; no              ; no             ; no         ; no            ; 3.3-V LVTTL  ; User                 ; 10 pF ; -                    ; -                   ;
++------------+-------+----------+-----+-----------------+----------------+------------+---------------+--------------+----------------------+-------+----------------------+---------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; All Package Pins                                                                                      ;
++----------+------------+----------+----------------+--------+--------------+---------+-----------------+
+; Location ; Pad Number ; I/O Bank ; Pin Name/Usage ; Dir.   ; I/O Standard ; Voltage ; User Assignment ;
++----------+------------+----------+----------------+--------+--------------+---------+-----------------+
+; 1        ; 0          ; --       ; GND+           ;        ;              ;         ;                 ;
+; 2        ; 1          ; --       ; GND+           ;        ;              ;         ;                 ;
+; 3        ; 2          ; --       ; VCCINT         ; power  ;              ; 3.3V    ;                 ;
+; 4        ; 3          ; --       ; enable         ; input  ; 3.3-V LVTTL  ;         ; N               ;
+; 5        ; 4          ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 6        ; 5          ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 7        ; 6          ; --       ; TDI            ; input  ; 3.3-V LVTTL  ;         ; N               ;
+; 8        ; 7          ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 9        ; 8          ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 10       ; 9          ; --       ; GND            ; gnd    ;              ;         ;                 ;
+; 11       ; 10         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 12       ; 11         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 13       ; 12         ; --       ; TMS            ; input  ; 3.3-V LVTTL  ;         ; N               ;
+; 14       ; 13         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 15       ; 14         ; --       ; VCCIO          ; power  ;              ; 3.3V    ;                 ;
+; 16       ; 15         ; --       ; pulse_o2       ; output ; 3.3-V LVTTL  ;         ; Y               ;
+; 17       ; 16         ; --       ; GND            ; gnd    ;              ;         ;                 ;
+; 18       ; 17         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 19       ; 18         ; --       ; scan[2]        ; output ; 3.3-V LVTTL  ;         ; Y               ;
+; 20       ; 19         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 21       ; 20         ; --       ; scan[0]        ; output ; 3.3-V LVTTL  ;         ; Y               ;
+; 22       ; 21         ; --       ; GND            ; gnd    ;              ;         ;                 ;
+; 23       ; 22         ; --       ; VCCINT         ; power  ;              ; 3.3V    ;                 ;
+; 24       ; 23         ; --       ; keycode[0]     ; output ; 3.3-V LVTTL  ;         ; Y               ;
+; 25       ; 24         ; --       ; keycode[3]     ; output ; 3.3-V LVTTL  ;         ; Y               ;
+; 26       ; 25         ; --       ; pulse_o1       ; output ; 3.3-V LVTTL  ;         ; Y               ;
+; 27       ; 26         ; --       ; keycode[1]     ; output ; 3.3-V LVTTL  ;         ; Y               ;
+; 28       ; 27         ; --       ; colum[1]       ; input  ; 3.3-V LVTTL  ;         ; Y               ;
+; 29       ; 28         ; --       ; keycode[2]     ; output ; 3.3-V LVTTL  ;         ; Y               ;
+; 30       ; 29         ; --       ; GND            ; gnd    ;              ;         ;                 ;
+; 31       ; 30         ; --       ; colum[0]       ; input  ; 3.3-V LVTTL  ;         ; Y               ;
+; 32       ; 31         ; --       ; TCK            ; input  ; 3.3-V LVTTL  ;         ; N               ;
+; 33       ; 32         ; --       ; P1             ; output ; 3.3-V LVTTL  ;         ; Y               ;
+; 34       ; 33         ; --       ; colum[2]       ; input  ; 3.3-V LVTTL  ;         ; Y               ;
+; 35       ; 34         ; --       ; VCCIO          ; power  ;              ; 3.3V    ;                 ;
+; 36       ; 35         ; --       ; GND            ; gnd    ;              ;         ;                 ;
+; 37       ; 36         ; --       ; P13            ; input  ; 3.3-V LVTTL  ;         ; Y               ;
+; 38       ; 37         ; --       ; TDO            ; output ; 3.3-V LVTTL  ;         ; N               ;
+; 39       ; 38         ; --       ; P14            ; input  ; 3.3-V LVTTL  ;         ; Y               ;
+; 40       ; 39         ; --       ; scan[3]        ; output ; 3.3-V LVTTL  ;         ; Y               ;
+; 41       ; 40         ; --       ; scan[1]        ; output ; 3.3-V LVTTL  ;         ; Y               ;
+; 42       ; 41         ; --       ; GND            ; gnd    ;              ;         ;                 ;
+; 43       ; 42         ; --       ; fin            ; input  ; 3.3-V LVTTL  ;         ; Y               ;
+; 44       ; 43         ; --       ; GND+           ;        ;              ;         ;                 ;
++----------+------------+----------+----------------+--------+--------------+---------+-----------------+
+Note: Pin directions (input, output or bidir) are based on device operating in user mode.
+
+
++--------------------------------------------------------------------------------------------------+
+; I/O Standard                                                                                     ;
++--------------+------------+----------------------+-------------------+-------------------+-------+
+; I/O Standard ; Input Vref ; Dedicated Input Pins ; Pins in I/O Bank1 ; Pins in I/O Bank2 ; Total ;
++--------------+------------+----------------------+-------------------+-------------------+-------+
+; 3.3-V LVTTL  ; -          ; 1                    ; 0                 ; 0                 ; 1     ;
++--------------+------------+----------------------+-------------------+-------------------+-------+
+
+
++--------------------------------------------------------------------+
+; Dedicated Inputs I/O                                               ;
++------+-------+-------+-------+--------------+------------+---------+
+; Name ; Pin # ; Type  ; VCCIO ; I/O Standard ; Input Vref ; Current ;
++------+-------+-------+-------+--------------+------------+---------+
+; fin  ; 43    ; Input ; --    ; 3.3-V LVTTL  ; -          ; 0 mA    ;
++------+-------+-------+-------+--------------+------------+---------+
+
+
++-----------------------------------------------+
+; Output Pin Default Load For Reported TCO      ;
++--------------+-------+------------------------+
+; I/O Standard ; Load  ; Termination Resistance ;
++--------------+-------+------------------------+
+; 3.3-V LVTTL  ; 10 pF ; Not Available          ;
+; 3.3-V LVCMOS ; 10 pF ; Not Available          ;
+; 3.3-V PCI    ; 10 pF ; 25 Ohm (Parallel)      ;
+; 2.5 V        ; 10 pF ; Not Available          ;
++--------------+-------+------------------------+
+Note: User assignments will override these defaults. The user specified values are listed in the Output Pins and Bidir Pins tables.
+
+
++------------------------------------------------------------------------------------------------+
+; Fitter Resource Utilization by Entity                                                          ;
++------------------------------+------------+------+------------------------------+--------------+
+; Compilation Hierarchy Node   ; Macrocells ; Pins ; Full Hierarchy Name          ; Library Name ;
++------------------------------+------------+------+------------------------------+--------------+
+; |vd2                         ; 34         ; 22   ; |vd2                         ; work         ;
+;    |lpm_counter:count_rtl_0| ; 16         ; 0    ; |vd2|lpm_counter:count_rtl_0 ; work         ;
++------------------------------+------------+------+------------------------------+--------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                                  ;
++----------------------------------+----------+---------+-------+--------+----------------------+------------------+
+; Name                             ; Location ; Fan-Out ; Usage ; Global ; Global Resource Used ; Global Line Name ;
++----------------------------------+----------+---------+-------+--------+----------------------+------------------+
+; fin                              ; PIN_43   ; 16      ; Clock ; yes    ; On                   ; --               ;
+; lpm_counter:count_rtl_0|dffs[15] ; LC16     ; 11      ; Clock ; no     ; --                   ; --               ;
++----------------------------------+----------+---------+-------+--------+----------------------+------------------+
+
+
++---------------------------------------------------------------------+
+; Global & Other Fast Signals                                         ;
++------+----------+---------+----------------------+------------------+
+; Name ; Location ; Fan-Out ; Global Resource Used ; Global Line Name ;
++------+----------+---------+----------------------+------------------+
+; fin  ; PIN_43   ; 16      ; On                   ; --               ;
++------+----------+---------+----------------------+------------------+
+
+
++--------------------------------------------+
+; Non-Global High Fan-Out Signals            ;
++----------------------------------+---------+
+; Name                             ; Fan-Out ;
++----------------------------------+---------+
+; lpm_counter:count_rtl_0|dffs[0]  ; 15      ;
+; lpm_counter:count_rtl_0|dffs[1]  ; 14      ;
+; lpm_counter:count_rtl_0|dffs[2]  ; 13      ;
+; lpm_counter:count_rtl_0|dffs[3]  ; 12      ;
+; lpm_counter:count_rtl_0|dffs[15] ; 11      ;
+; lpm_counter:count_rtl_0|dffs[4]  ; 11      ;
+; colum[2]                         ; 10      ;
+; colum[1]                         ; 10      ;
+; colum[0]                         ; 10      ;
+; lpm_counter:count_rtl_0|dffs[5]  ; 10      ;
+; lpm_counter:count_rtl_0|dffs[6]  ; 9       ;
+; Equal0~3sexpand0                 ; 8       ;
+; lpm_counter:count_rtl_0|dffs[7]  ; 8       ;
+; lpm_counter:count_rtl_0|dffs[8]  ; 7       ;
+; h2code[0]                        ; 6       ;
+; lpm_counter:count_rtl_0|dffs[9]  ; 6       ;
+; h2code[1]                        ; 5       ;
+; lpm_counter:count_rtl_0|dffs[10] ; 5       ;
+; lpm_counter:count_rtl_0|dffs[11] ; 4       ;
+; qa                               ; 3       ;
+; lpm_counter:count_rtl_0|dffs[12] ; 3       ;
+; keycode~35sexpand2               ; 2       ;
+; keycode~35sexpand1               ; 2       ;
+; keycode~35sexpand0               ; 2       ;
+; keycode[1]~reg0                  ; 2       ;
+; qc                               ; 2       ;
+; keycode[0]~reg0                  ; 2       ;
+; qb                               ; 2       ;
+; keycode[3]~reg0                  ; 2       ;
+; keycode[2]~reg0                  ; 2       ;
+; lpm_counter:count_rtl_0|dffs[13] ; 2       ;
+; P14                              ; 1       ;
+; P13                              ; 1       ;
+; pulse_o2~2                       ; 1       ;
+; Decoder0~14                      ; 1       ;
+; Decoder0~11                      ; 1       ;
+; Decoder0~8                       ; 1       ;
+; Decoder0~4                       ; 1       ;
+; qd                               ; 1       ;
+; pulse_o1~3                       ; 1       ;
+; input_db                         ; 1       ;
+; lpm_counter:count_rtl_0|dffs[14] ; 1       ;
+; P1~1                             ; 1       ;
++----------------------------------+---------+
+
+
++------------------------------------------------+
+; Interconnect Usage Summary                     ;
++----------------------------+-------------------+
+; Interconnect Resource Type ; Usage             ;
++----------------------------+-------------------+
+; Output enables             ; 0 / 6 ( 0 % )     ;
+; PIA buffers                ; 37 / 144 ( 26 % ) ;
++----------------------------+-------------------+
+
+
++----------------------------------------------------------------------+
+; LAB Macrocells                                                       ;
++----------------------------------------+-----------------------------+
+; Number of Macrocells  (Average = 8.50) ; Number of LABs  (Total = 4) ;
++----------------------------------------+-----------------------------+
+; 0                                      ; 0                           ;
+; 1                                      ; 0                           ;
+; 2                                      ; 0                           ;
+; 3                                      ; 2                           ;
+; 4                                      ; 0                           ;
+; 5                                      ; 0                           ;
+; 6                                      ; 0                           ;
+; 7                                      ; 0                           ;
+; 8                                      ; 0                           ;
+; 9                                      ; 0                           ;
+; 10                                     ; 0                           ;
+; 11                                     ; 0                           ;
+; 12                                     ; 1                           ;
+; 13                                     ; 0                           ;
+; 14                                     ; 0                           ;
+; 15                                     ; 0                           ;
+; 16                                     ; 1                           ;
++----------------------------------------+-----------------------------+
+
+
++-------------------------------------------------------------------------------+
+; Shareable Expander                                                            ;
++-------------------------------------------------+-----------------------------+
+; Number of shareable expanders  (Average = 1.00) ; Number of LABs  (Total = 1) ;
++-------------------------------------------------+-----------------------------+
+; 0                                               ; 3                           ;
+; 1                                               ; 0                           ;
+; 2                                               ; 0                           ;
+; 3                                               ; 0                           ;
+; 4                                               ; 1                           ;
++-------------------------------------------------+-----------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Logic Cell Interconnection                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ;
++-----+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; LAB ; Logic Cell ; Input                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   ; Output                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ;
++-----+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+;  A  ; LC16       ; fin, lpm_counter:count_rtl_0|dffs[1], lpm_counter:count_rtl_0|dffs[0], lpm_counter:count_rtl_0|dffs[2], lpm_counter:count_rtl_0|dffs[3], lpm_counter:count_rtl_0|dffs[4], lpm_counter:count_rtl_0|dffs[5], lpm_counter:count_rtl_0|dffs[6], lpm_counter:count_rtl_0|dffs[7], lpm_counter:count_rtl_0|dffs[8], lpm_counter:count_rtl_0|dffs[9], lpm_counter:count_rtl_0|dffs[10], lpm_counter:count_rtl_0|dffs[11], lpm_counter:count_rtl_0|dffs[12], lpm_counter:count_rtl_0|dffs[13], lpm_counter:count_rtl_0|dffs[14] ; input_db, keycode[2]~reg0, keycode[3]~reg0, h2code[0], qa, qb, keycode[0]~reg0, qc, h2code[1], qd, keycode[1]~reg0                                                                                                                                                                                                                                                                                                                                                                                                  ;
+;  A  ; LC15       ; fin                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     ; lpm_counter:count_rtl_0|dffs[1], lpm_counter:count_rtl_0|dffs[2], lpm_counter:count_rtl_0|dffs[3], lpm_counter:count_rtl_0|dffs[4], lpm_counter:count_rtl_0|dffs[5], lpm_counter:count_rtl_0|dffs[6], lpm_counter:count_rtl_0|dffs[7], lpm_counter:count_rtl_0|dffs[8], lpm_counter:count_rtl_0|dffs[9], lpm_counter:count_rtl_0|dffs[10], lpm_counter:count_rtl_0|dffs[11], lpm_counter:count_rtl_0|dffs[12], lpm_counter:count_rtl_0|dffs[13], lpm_counter:count_rtl_0|dffs[14], lpm_counter:count_rtl_0|dffs[15] ;
+;  A  ; LC9        ; fin, lpm_counter:count_rtl_0|dffs[0]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ; lpm_counter:count_rtl_0|dffs[2], lpm_counter:count_rtl_0|dffs[3], lpm_counter:count_rtl_0|dffs[4], lpm_counter:count_rtl_0|dffs[5], lpm_counter:count_rtl_0|dffs[6], lpm_counter:count_rtl_0|dffs[7], lpm_counter:count_rtl_0|dffs[8], lpm_counter:count_rtl_0|dffs[9], lpm_counter:count_rtl_0|dffs[10], lpm_counter:count_rtl_0|dffs[11], lpm_counter:count_rtl_0|dffs[12], lpm_counter:count_rtl_0|dffs[13], lpm_counter:count_rtl_0|dffs[14], lpm_counter:count_rtl_0|dffs[15]                                  ;
+;  A  ; LC10       ; fin, lpm_counter:count_rtl_0|dffs[1], lpm_counter:count_rtl_0|dffs[0]                                                                                                                                                                                                                                                                                                                                                                                                                                                   ; lpm_counter:count_rtl_0|dffs[3], lpm_counter:count_rtl_0|dffs[4], lpm_counter:count_rtl_0|dffs[5], lpm_counter:count_rtl_0|dffs[6], lpm_counter:count_rtl_0|dffs[7], lpm_counter:count_rtl_0|dffs[8], lpm_counter:count_rtl_0|dffs[9], lpm_counter:count_rtl_0|dffs[10], lpm_counter:count_rtl_0|dffs[11], lpm_counter:count_rtl_0|dffs[12], lpm_counter:count_rtl_0|dffs[13], lpm_counter:count_rtl_0|dffs[14], lpm_counter:count_rtl_0|dffs[15]                                                                   ;
+;  A  ; LC1        ; fin, lpm_counter:count_rtl_0|dffs[1], lpm_counter:count_rtl_0|dffs[0], lpm_counter:count_rtl_0|dffs[2]                                                                                                                                                                                                                                                                                                                                                                                                                  ; lpm_counter:count_rtl_0|dffs[4], lpm_counter:count_rtl_0|dffs[5], lpm_counter:count_rtl_0|dffs[6], lpm_counter:count_rtl_0|dffs[7], lpm_counter:count_rtl_0|dffs[8], lpm_counter:count_rtl_0|dffs[9], lpm_counter:count_rtl_0|dffs[10], lpm_counter:count_rtl_0|dffs[11], lpm_counter:count_rtl_0|dffs[12], lpm_counter:count_rtl_0|dffs[13], lpm_counter:count_rtl_0|dffs[14], lpm_counter:count_rtl_0|dffs[15]                                                                                                    ;
+;  A  ; LC2        ; fin, lpm_counter:count_rtl_0|dffs[1], lpm_counter:count_rtl_0|dffs[0], lpm_counter:count_rtl_0|dffs[2], lpm_counter:count_rtl_0|dffs[3]                                                                                                                                                                                                                                                                                                                                                                                 ; lpm_counter:count_rtl_0|dffs[5], lpm_counter:count_rtl_0|dffs[6], lpm_counter:count_rtl_0|dffs[7], lpm_counter:count_rtl_0|dffs[8], lpm_counter:count_rtl_0|dffs[9], lpm_counter:count_rtl_0|dffs[10], lpm_counter:count_rtl_0|dffs[11], lpm_counter:count_rtl_0|dffs[12], lpm_counter:count_rtl_0|dffs[13], lpm_counter:count_rtl_0|dffs[14], lpm_counter:count_rtl_0|dffs[15]                                                                                                                                     ;
+;  A  ; LC3        ; fin, lpm_counter:count_rtl_0|dffs[1], lpm_counter:count_rtl_0|dffs[0], lpm_counter:count_rtl_0|dffs[2], lpm_counter:count_rtl_0|dffs[3], lpm_counter:count_rtl_0|dffs[4]                                                                                                                                                                                                                                                                                                                                                ; lpm_counter:count_rtl_0|dffs[6], lpm_counter:count_rtl_0|dffs[7], lpm_counter:count_rtl_0|dffs[8], lpm_counter:count_rtl_0|dffs[9], lpm_counter:count_rtl_0|dffs[10], lpm_counter:count_rtl_0|dffs[11], lpm_counter:count_rtl_0|dffs[12], lpm_counter:count_rtl_0|dffs[13], lpm_counter:count_rtl_0|dffs[14], lpm_counter:count_rtl_0|dffs[15]                                                                                                                                                                      ;
+;  A  ; LC6        ; fin, lpm_counter:count_rtl_0|dffs[1], lpm_counter:count_rtl_0|dffs[0], lpm_counter:count_rtl_0|dffs[2], lpm_counter:count_rtl_0|dffs[3], lpm_counter:count_rtl_0|dffs[4], lpm_counter:count_rtl_0|dffs[5]                                                                                                                                                                                                                                                                                                               ; lpm_counter:count_rtl_0|dffs[7], lpm_counter:count_rtl_0|dffs[8], lpm_counter:count_rtl_0|dffs[9], lpm_counter:count_rtl_0|dffs[10], lpm_counter:count_rtl_0|dffs[11], lpm_counter:count_rtl_0|dffs[12], lpm_counter:count_rtl_0|dffs[13], lpm_counter:count_rtl_0|dffs[14], lpm_counter:count_rtl_0|dffs[15]                                                                                                                                                                                                       ;
+;  A  ; LC4        ; fin, lpm_counter:count_rtl_0|dffs[1], lpm_counter:count_rtl_0|dffs[0], lpm_counter:count_rtl_0|dffs[2], lpm_counter:count_rtl_0|dffs[3], lpm_counter:count_rtl_0|dffs[4], lpm_counter:count_rtl_0|dffs[5], lpm_counter:count_rtl_0|dffs[6]                                                                                                                                                                                                                                                                              ; lpm_counter:count_rtl_0|dffs[8], lpm_counter:count_rtl_0|dffs[9], lpm_counter:count_rtl_0|dffs[10], lpm_counter:count_rtl_0|dffs[11], lpm_counter:count_rtl_0|dffs[12], lpm_counter:count_rtl_0|dffs[13], lpm_counter:count_rtl_0|dffs[14], lpm_counter:count_rtl_0|dffs[15]                                                                                                                                                                                                                                        ;
+;  A  ; LC7        ; fin, lpm_counter:count_rtl_0|dffs[1], lpm_counter:count_rtl_0|dffs[0], lpm_counter:count_rtl_0|dffs[2], lpm_counter:count_rtl_0|dffs[3], lpm_counter:count_rtl_0|dffs[4], lpm_counter:count_rtl_0|dffs[5], lpm_counter:count_rtl_0|dffs[6], lpm_counter:count_rtl_0|dffs[7]                                                                                                                                                                                                                                             ; lpm_counter:count_rtl_0|dffs[9], lpm_counter:count_rtl_0|dffs[10], lpm_counter:count_rtl_0|dffs[11], lpm_counter:count_rtl_0|dffs[12], lpm_counter:count_rtl_0|dffs[13], lpm_counter:count_rtl_0|dffs[14], lpm_counter:count_rtl_0|dffs[15]                                                                                                                                                                                                                                                                         ;
+;  A  ; LC8        ; fin, lpm_counter:count_rtl_0|dffs[1], lpm_counter:count_rtl_0|dffs[0], lpm_counter:count_rtl_0|dffs[2], lpm_counter:count_rtl_0|dffs[3], lpm_counter:count_rtl_0|dffs[4], lpm_counter:count_rtl_0|dffs[5], lpm_counter:count_rtl_0|dffs[6], lpm_counter:count_rtl_0|dffs[7], lpm_counter:count_rtl_0|dffs[8]                                                                                                                                                                                                            ; lpm_counter:count_rtl_0|dffs[10], lpm_counter:count_rtl_0|dffs[11], lpm_counter:count_rtl_0|dffs[12], lpm_counter:count_rtl_0|dffs[13], lpm_counter:count_rtl_0|dffs[14], lpm_counter:count_rtl_0|dffs[15]                                                                                                                                                                                                                                                                                                          ;
+;  A  ; LC11       ; fin, lpm_counter:count_rtl_0|dffs[1], lpm_counter:count_rtl_0|dffs[0], lpm_counter:count_rtl_0|dffs[2], lpm_counter:count_rtl_0|dffs[3], lpm_counter:count_rtl_0|dffs[4], lpm_counter:count_rtl_0|dffs[5], lpm_counter:count_rtl_0|dffs[6], lpm_counter:count_rtl_0|dffs[7], lpm_counter:count_rtl_0|dffs[8], lpm_counter:count_rtl_0|dffs[9]                                                                                                                                                                           ; lpm_counter:count_rtl_0|dffs[11], lpm_counter:count_rtl_0|dffs[12], lpm_counter:count_rtl_0|dffs[13], lpm_counter:count_rtl_0|dffs[14], lpm_counter:count_rtl_0|dffs[15]                                                                                                                                                                                                                                                                                                                                            ;
+;  A  ; LC12       ; fin, lpm_counter:count_rtl_0|dffs[1], lpm_counter:count_rtl_0|dffs[0], lpm_counter:count_rtl_0|dffs[2], lpm_counter:count_rtl_0|dffs[3], lpm_counter:count_rtl_0|dffs[4], lpm_counter:count_rtl_0|dffs[5], lpm_counter:count_rtl_0|dffs[6], lpm_counter:count_rtl_0|dffs[7], lpm_counter:count_rtl_0|dffs[8], lpm_counter:count_rtl_0|dffs[9], lpm_counter:count_rtl_0|dffs[10]                                                                                                                                         ; lpm_counter:count_rtl_0|dffs[12], lpm_counter:count_rtl_0|dffs[13], lpm_counter:count_rtl_0|dffs[14], lpm_counter:count_rtl_0|dffs[15]                                                                                                                                                                                                                                                                                                                                                                              ;
+;  A  ; LC5        ; fin, lpm_counter:count_rtl_0|dffs[1], lpm_counter:count_rtl_0|dffs[0], lpm_counter:count_rtl_0|dffs[2], lpm_counter:count_rtl_0|dffs[3], lpm_counter:count_rtl_0|dffs[4], lpm_counter:count_rtl_0|dffs[5], lpm_counter:count_rtl_0|dffs[6], lpm_counter:count_rtl_0|dffs[7], lpm_counter:count_rtl_0|dffs[8], lpm_counter:count_rtl_0|dffs[9], lpm_counter:count_rtl_0|dffs[10], lpm_counter:count_rtl_0|dffs[11]                                                                                                       ; lpm_counter:count_rtl_0|dffs[13], lpm_counter:count_rtl_0|dffs[14], lpm_counter:count_rtl_0|dffs[15]                                                                                                                                                                                                                                                                                                                                                                                                                ;
+;  A  ; LC13       ; fin, lpm_counter:count_rtl_0|dffs[1], lpm_counter:count_rtl_0|dffs[0], lpm_counter:count_rtl_0|dffs[2], lpm_counter:count_rtl_0|dffs[3], lpm_counter:count_rtl_0|dffs[4], lpm_counter:count_rtl_0|dffs[5], lpm_counter:count_rtl_0|dffs[6], lpm_counter:count_rtl_0|dffs[7], lpm_counter:count_rtl_0|dffs[8], lpm_counter:count_rtl_0|dffs[9], lpm_counter:count_rtl_0|dffs[10], lpm_counter:count_rtl_0|dffs[11], lpm_counter:count_rtl_0|dffs[12]                                                                     ; lpm_counter:count_rtl_0|dffs[14], lpm_counter:count_rtl_0|dffs[15]                                                                                                                                                                                                                                                                                                                                                                                                                                                  ;
+;  A  ; LC14       ; fin, lpm_counter:count_rtl_0|dffs[1], lpm_counter:count_rtl_0|dffs[0], lpm_counter:count_rtl_0|dffs[2], lpm_counter:count_rtl_0|dffs[3], lpm_counter:count_rtl_0|dffs[4], lpm_counter:count_rtl_0|dffs[5], lpm_counter:count_rtl_0|dffs[6], lpm_counter:count_rtl_0|dffs[7], lpm_counter:count_rtl_0|dffs[8], lpm_counter:count_rtl_0|dffs[9], lpm_counter:count_rtl_0|dffs[10], lpm_counter:count_rtl_0|dffs[11], lpm_counter:count_rtl_0|dffs[12], lpm_counter:count_rtl_0|dffs[13]                                   ; lpm_counter:count_rtl_0|dffs[15]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ;
+;  B  ; LC17       ; h2code[0], h2code[1]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ; scan[0]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             ;
+;  B  ; LC20       ; h2code[0], h2code[1]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ; scan[2]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             ;
+;  B  ; LC25       ; qc, qd                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ; pulse_o2                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
+;  C  ; LC35       ; colum[2], colum[0], colum[1], keycode[3]~reg0, lpm_counter:count_rtl_0|dffs[15], Equal0~3sexpand0                                                                                                                                                                                                                                                                                                                                                                                                                       ; keycode[3]~reg0, keycode[3]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         ;
+;  C  ; LC38       ; lpm_counter:count_rtl_0|dffs[15], colum[2], colum[1], colum[0]                                                                                                                                                                                                                                                                                                                                                                                                                                                          ; keycode[0]~reg0, h2code[1], Decoder0~4, Decoder0~8, Decoder0~11, Decoder0~14                                                                                                                                                                                                                                                                                                                                                                                                                                        ;
+;  C  ; LC47       ; input_db, lpm_counter:count_rtl_0|dffs[15]                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ; qb, pulse_o1~3, qc                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ;
+;  C  ; LC34       ; qa, lpm_counter:count_rtl_0|dffs[15]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ; pulse_o1~3, qc                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ;
+;  C  ; LC33       ; h2code[0], keycode[0]~reg0, lpm_counter:count_rtl_0|dffs[15], colum[2], Equal0~3sexpand0, colum[1], colum[0], keycode~35sexpand0, keycode~35sexpand1, keycode~35sexpand2                                                                                                                                                                                                                                                                                                                                                ; keycode[0]~reg0, keycode[0]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         ;
+;  C  ; LC36       ; qa, qb                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ; pulse_o1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
+;  C  ; LC45       ; qa, qb, lpm_counter:count_rtl_0|dffs[15]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ; qd, pulse_o2~2                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ;
+;  C  ; LC39       ; h2code[0], lpm_counter:count_rtl_0|dffs[15], colum[2], colum[1], colum[0]                                                                                                                                                                                                                                                                                                                                                                                                                                               ; Decoder0~4, Decoder0~8, Decoder0~11, Decoder0~14, keycode[1]~reg0                                                                                                                                                                                                                                                                                                                                                                                                                                                   ;
+;  C  ; LC40       ; qc, lpm_counter:count_rtl_0|dffs[15]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ; pulse_o2~2                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ;
+;  C  ; LC46       ; lpm_counter:count_rtl_0|dffs[15], Equal0~3sexpand0                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; qa                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ;
+;  C  ; LC37       ; h2code[1], keycode[1]~reg0, lpm_counter:count_rtl_0|dffs[15], colum[2], Equal0~3sexpand0, colum[1], colum[0], keycode~35sexpand0, keycode~35sexpand1, keycode~35sexpand2                                                                                                                                                                                                                                                                                                                                                ; keycode[1]~reg0, keycode[1]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         ;
+;  C  ; LC41       ; colum[0], colum[2], colum[1], keycode[2]~reg0, lpm_counter:count_rtl_0|dffs[15], Equal0~3sexpand0                                                                                                                                                                                                                                                                                                                                                                                                                       ; keycode[2]~reg0, keycode[2]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         ;
+;  D  ; LC62       ; h2code[0], h2code[1]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ; scan[3]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             ;
+;  D  ; LC64       ; h2code[0], h2code[1]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ; scan[1]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             ;
+;  D  ; LC49       ; P13, P14                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ; P1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ;
++-----+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------+
+; Fitter Device Options                                         ;
++----------------------------------------------+----------------+
+; Option                                       ; Setting        ;
++----------------------------------------------+----------------+
+; Enable user-supplied start-up clock (CLKUSR) ; Off            ;
+; Enable device-wide reset (DEV_CLRn)          ; Off            ;
+; Enable device-wide output enable (DEV_OE)    ; Off            ;
+; Enable INIT_DONE output                      ; Off            ;
+; Configuration scheme                         ; Passive Serial ;
+; Security bit                                 ; Off            ;
+; Base pin-out file on sameframe device        ; Off            ;
++----------------------------------------------+----------------+
+
+
++-----------------+
+; Fitter Messages ;
++-----------------+
+Info: *******************************************************************
+Info: Running Quartus II Fitter
+    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+    Info: Processing started: Fri Nov 04 11:38:53 2022
+Info: Command: quartus_fit --read_settings_files=off --write_settings_files=off vd2 -c vd2
+Info: Selected device EPM3064ALC44-10 for design "vd2"
+Info: Quartus II Fitter was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 205 megabytes
+    Info: Processing ended: Fri Nov 04 11:38:53 2022
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+

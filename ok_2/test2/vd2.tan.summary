@@ -15,7 +15,7 @@ Failed Paths   : 0
 Type           : Worst-case tco
 Slack          : N/A
 Required Time  : None
-Actual Time    : 20.500 ns
+Actual Time    : 20.400 ns
 From           : h2code[1]
 To             : scan[0]
 From Clock     : fin
@@ -45,9 +45,9 @@ Failed Paths   : 0
 Type           : Clock Setup: 'fin'
 Slack          : N/A
 Required Time  : None
-Actual Time    : 50.00 MHz ( period = 20.000 ns )
-From           : input_db
-To             : QA1
+Actual Time    : 98.04 MHz ( period = 10.200 ns )
+From           : h2code[1]
+To             : keycode[1]~reg0
 From Clock     : fin
 To Clock       : fin
 Failed Paths   : 0
