@@ -21,14 +21,14 @@ end
 
 always @(posedge clk)begin 
 	 P20_sel_d  <= P20_sel;//切換功能(調時or計時)     
-	 OneHz_in_d <= P22;    //           
+	 OneHz_in_d <= P22;             
 	 P21_d      <= P21;                 
 	 P7_d       <= P7;                  
 	 P5_d       <= P5;                  
 end
 always @(*)begin 
 	   if(P20_sel_d == 1)begin
-			clk_h <= P19;//input hour clock                      
+		 clk_h <= P19;//input hour clock                      
          P8    <= P7_d;//tell Module update Min-Reg
          P4    <= OneHz_in_d;//p4 led toggle
          P6    <= P7_d; //bridge p7 for clear  Sec-Reg  
