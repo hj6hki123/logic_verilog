@@ -8,6 +8,9 @@
 
 ## 第二題
 
+
+
+```tex
 set_location_assignment PIN_24 -to seg_S[0]
 set_location_assignment PIN_25 -to seg_S[1]
 set_location_assignment PIN_26 -to seg_S[2]
@@ -23,5 +26,10 @@ set_location_assignment PIN_4 -to touch_key[0]
 set_location_assignment PIN_5 -to touch_key[1]
 set_location_assignment PIN_6 -to touch_key[2]
 set_location_assignment PIN_8 -to touch_key[3]
+```
+
+
+
+
 
 ![image-20221206132632947](Readme.assets/image-20221206132632947.png)
