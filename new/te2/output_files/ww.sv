@@ -1,6 +1,5 @@
-module ww(seg_S,rst,scan_key,touch_key,fin);
+module ww(seg_S,scan_key,touch_key,fin);
 input  fin;
-input rst;
 input [3:0] touch_key;
 output reg [2:0] scan_key;
 output [6:0] seg_S;
@@ -10,12 +9,35 @@ output [6:0] seg_S;
 wire touchment;
 wire clk;
 reg [15:0] count;
-reg [3:0] keycode;
-reg [3:0]shiftflag;
+reg [3:0] keycode ;
+
+initial begin
+	keycode <= 1'b0;
+	count <= 1'b0;
+end
 
 
 
-always@(posedge fin)count <= count + 1'b1;
+
+task select_num;
+const ref logic [3:0] touch_key;
+input[3:0] num1,num2,num3,num4;
+ref logic  [3:0]keycoden ;
+
+begin
+	case (touch_key)
+		4'b1000:keycoden<=num1;  
+		4'b0100:keycoden<=num2;  
+		4'b0010:keycoden<=num3;  
+		4'b0001:keycoden<=num4;  	
+	endcase
+end
+
+
+
+endtask
+
+
 
 function [6:0] dt_translate;// translate number for seg
 	input[3:0]date;
@@ -39,6 +61,10 @@ function [6:0] dt_translate;// translate number for seg
 	end
 endfunction
 
+
+always@(posedge fin)count <= count + 1'b1;
+assign clk = count[15];
+
 always@(posedge clk)begin
 	case (scan_key)
 		3'b100:scan_key<=3'b010;  
@@ -51,26 +77,11 @@ end
 always@(negedge clk)begin
 	
 	if(scan_key== 3'b100)
-				case (touch_key)
-					4'b1000:keycode<=4'd1;  
-					4'b0100:keycode<=4'd4;  
-					4'b0010:keycode<=4'd7;  
-					4'b0001:keycode<=4'd10;  
-				endcase
+		select_num(touch_key,1,4,7,10,keycode);
 	else if(scan_key== 3'b010)
-				case (touch_key)
-					4'b1000:keycode<=4'd2;  
-					4'b0100:keycode<=4'd5;  
-					4'b0010:keycode<=4'd8;  
-					4'b0001:keycode<=4'd0;  
-				endcase
+		select_num(touch_key,2,5,8,0,keycode);
 	else if(scan_key== 3'b001)
-				case (touch_key)
-					4'b1000:keycode<=4'd3;  
-					4'b0100:keycode<=4'd6;  
-					4'b0010:keycode<=4'd9;  
-					4'b0001:keycode<=4'd11;  
-				endcase	
+		select_num(touch_key,3,6,9,11,keycode);
 	
 end
 
@@ -78,7 +89,7 @@ end
 
 
 assign seg_S = dt_translate(keycode);
-assign clk = count[15];
+
 
 
 endmodule

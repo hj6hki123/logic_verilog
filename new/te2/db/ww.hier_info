@@ -6,7 +6,6 @@ seg_S[3] <= dt_translate.DB_MAX_OUTPUT_PORT_TYPE
 seg_S[4] <= dt_translate.DB_MAX_OUTPUT_PORT_TYPE
 seg_S[5] <= dt_translate.DB_MAX_OUTPUT_PORT_TYPE
 seg_S[6] <= dt_translate.DB_MAX_OUTPUT_PORT_TYPE
-rst => ~NO_FANOUT~
 scan_key[0] <= scan_key[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 scan_key[1] <= scan_key[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 scan_key[2] <= scan_key[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
