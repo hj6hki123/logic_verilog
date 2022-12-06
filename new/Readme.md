@@ -8,7 +8,21 @@
 
 ## 第二題
 
+**7-segment Display** :
 
+![7-segment Display](https://www.electronics-tutorials.ws/wp-content/uploads/2013/10/segment4.gif?fit=277%2C236?fit=277,226)
+
+
+
+
+
+
+
+**4x3 Keypad Display:**
+
+![](https://electropeak.com/learn/wp-content/uploads/2020/11/Keypad-1.gif)
+
+**Pin Assignment:**
 
 ```tex
 set_location_assignment PIN_24 -to seg_S[0]
