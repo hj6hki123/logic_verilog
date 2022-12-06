@@ -10,7 +10,9 @@
 
 **7-segment Display** :
 
-![segment4](Readme.assets/segment4.gif)
+![7-segment-display-pin-diagr_0](Readme.assets/7-segment-display-pin-diagr_0.png)
+
+![7段共陽極](Readme.assets/image-20221206134739027.png "7段共陽極")
 
 
 
