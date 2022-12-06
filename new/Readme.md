@@ -10,7 +10,7 @@
 
 **7-segment Display** :
 
-![7-segment Display](https://www.electronics-tutorials.ws/wp-content/uploads/2013/10/segment4.gif?fit=277%2C236?fit=277,226)
+![segment4](Readme.assets/segment4.gif)
 
 
 
