@@ -1,0 +1,29 @@
+|qq
+fin => count[0].CLK
+fin => count[1].CLK
+fin => count[2].CLK
+fin => count[3].CLK
+fin => count[4].CLK
+fin => count[5].CLK
+fin => count[6].CLK
+fin => count[7].CLK
+fin => count[8].CLK
+fin => count[9].CLK
+fin => count[10].CLK
+fin => count[11].CLK
+fin => count[12].CLK
+fin => count[13].CLK
+seg_S[0] <= seg_S[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+seg_S[1] <= seg_S[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+seg_S[2] <= seg_S[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+seg_S[3] <= seg_S[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+seg_S[4] <= seg_S[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+seg_S[5] <= seg_S[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+seg_S[6] <= seg_S[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+com_s[0] <= com_s[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+com_s[1] <= com_s[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+com_s[2] <= com_s[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+com_s[3] <= com_s[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dp <= dp~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

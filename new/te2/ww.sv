@@ -1,15 +1,18 @@
-module ww(seg_S,scan_key,touch_key,fin);
-  input  fin;
-  input [3:0] touch_key;
-  output reg [2:0] scan_key;
-  output [6:0] seg_S;
+//UTF-8 Encoding
+module ww(seg_S,scan_key,touch_key,fin); //設定輸入輸出
+  input  fin;//時鐘clock
+  input [3:0] touch_key;//偵測 row 橫列
+  output [2:0] scan_key;//掃描 colum 直行
+  output [6:0] seg_S;//七段顯示器(a~g)
 
 
+  //設定連線節點
+  wire clk;//除頻時鐘
 
-  wire touchment;
-  wire clk;
+  //設定暫存器
+  reg [2:0] scan_key;
   reg [15:0] count;
-  reg [3:0] keycode ;
+  reg [3:0] keycode;
 
   initial
   begin
@@ -48,18 +51,30 @@ module ww(seg_S,scan_key,touch_key,fin);
     input[3:0]date;
     begin
       case (date)
-        4'd0:dt_translate = 7'b0000001;     //number 0 -> 0x7e
-        4'd1:dt_translate = 7'b1001111;     //number 1 -> 0x30
-        4'd2:dt_translate = 7'b0010010;     //number 2 -> 0x6d
-        4'd3:dt_translate = 7'b0000110;     //number 3 -> 0x79
-        4'd4:dt_translate = 7'b1001100;     //number 4 -> 0x33
-        4'd5:dt_translate = 7'b0100100;     //number 5 -> 0x5b
-        4'd6: dt_translate = 7'b0100000;     //number 6 -> 0x5f
-        4'd7:dt_translate = 7'b0001111;     //number 7 -> 0x70
-        4'd8:dt_translate = 7'b0000000;     //number 8 -> 0x7f
-        4'd9:dt_translate = 7'b0000100;      //number 9 -> 0x7b
-        4'd10:dt_translate = 7'b1110010;      //number * -> spec
-        4'd11:dt_translate = 7'b1100110;      //number # -> spec
+        4'd0:
+          dt_translate = 7'b0000001;     //number 0 -> 0x7e
+        4'd1:
+          dt_translate = 7'b1001111;     //number 1 -> 0x30
+        4'd2:
+          dt_translate = 7'b0010010;     //number 2 -> 0x6d
+        4'd3:
+          dt_translate = 7'b0000110;     //number 3 -> 0x79
+        4'd4:
+          dt_translate = 7'b1001100;     //number 4 -> 0x33
+        4'd5:
+          dt_translate = 7'b0100100;     //number 5 -> 0x5b
+        4'd6:
+          dt_translate = 7'b0100000;     //number 6 -> 0x5f
+        4'd7:
+          dt_translate = 7'b0001111;     //number 7 -> 0x70
+        4'd8:
+          dt_translate = 7'b0000000;     //number 8 -> 0x7f
+        4'd9:
+          dt_translate = 7'b0000100;      //number 9 -> 0x7b
+        4'd10:
+          dt_translate = 7'b1110010;      //number * -> spec
+        4'd11:
+          dt_translate = 7'b1100110;      //number # -> spec
         default dt_translate = 7'b1111111;
       endcase
     end

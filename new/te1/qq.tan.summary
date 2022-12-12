@@ -1,0 +1,36 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 13.500 ns
+From           : seg_S[6]~reg0
+To             : seg_S[6]
+From Clock     : fin
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Clock Setup: 'fin'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 99.01 MHz ( period = 10.100 ns )
+From           : shiftflag.state_bit_1
+To             : seg_S[0]~reg0
+From Clock     : fin
+To Clock       : fin
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+

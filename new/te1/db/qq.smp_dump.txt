@@ -1,0 +1,7 @@
+
+State Machine - |qq|shiftflag
+Name shiftflag.state_bit_1 shiftflag.state_bit_0 
+shiftflag.0001 0 0 
+shiftflag.0010 0 1 
+shiftflag.0100 1 0 
+shiftflag.1000 1 1 

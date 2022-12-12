@@ -1,0 +1,103 @@
+module qq(fin,seg_S,com_s,dp);
+  input fin;
+  output reg [6:0]seg_S;
+  output reg [3:0]com_s;
+  output reg dp;
+  reg [13:0]count;
+  wire clk;
+  reg [3:0]shiftflag =4'b0001;
+  
+  reg [4:0]num1,num2,num3,num4;
+  reg [3:0]dp_n;
+  
+  initial begin
+	num1 <= 4'd1;
+	num2 <= 4'd4;
+	num3 <= 4'd5;
+	num4 <= 4'd7;
+	
+	dp_n <= 4'b1000;
+
+  end
+
+  function [6:0] dt_translate;//For Common anode {(dp)abcdefg}
+    input[3:0]date;
+    begin
+      case (date)
+        4'd0:
+          dt_translate = 7'b1111110;     //number 0
+        4'd1:
+          dt_translate = 7'b0110000;     //number 1 
+        4'd2:
+          dt_translate = 7'b1101101;     //number 2 
+        4'd3:
+          dt_translate = 7'b1111001;     //number 3
+        4'd4:
+          dt_translate = 7'b0110011;     //number 4 
+        4'd5:
+          dt_translate = 7'b1011011;     //number 5 
+        4'd6:
+          dt_translate = 7'b1011111;     //number 6 
+        4'd7:
+          dt_translate = 7'b1110000;     //number 7 
+        4'd8:
+          dt_translate = 7'b1111111;     //number 8 
+        4'd9:
+          dt_translate = 7'b1111011;      //number 9
+
+        default dt_translate = 8'b00000000;
+      endcase
+    end
+  endfunction
+
+
+  always @(posedge fin) count<= count + 1;
+
+  assign clk = count[13];
+
+  always @(posedge clk )
+  begin
+
+    case (shiftflag)
+      4'b0001:
+      begin
+        com_s<=4'b1000;
+        seg_S<=dt_translate(num1);
+        dp <= dp_n[3];
+        shiftflag<=4'b0010;
+      end
+
+      4'b0010:
+      begin
+        com_s<=4'b0100;
+        seg_S<=dt_translate(num2);
+        dp <= dp_n[2];
+        shiftflag<=4'b0100;
+      end
+
+      4'b0100:
+      begin
+        com_s<=4'b0010;
+        seg_S<=dt_translate(num3);
+        dp <= dp_n[1];
+        shiftflag<=4'b1000;
+      end
+
+      4'b1000:
+      begin
+        com_s<=4'b0001;
+        seg_S<=dt_translate(num4);
+        dp <= dp_n[1];
+        shiftflag<=4'b0001;
+      end
+    endcase
+
+  end
+
+       
+
+
+
+
+endmodule
+
