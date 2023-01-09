@@ -12,15 +12,15 @@ module qq(fin,seg_S,com_s,dp);
   
   initial begin
 	num1 <= 4'd1;
-	num2 <= 4'd4;
-	num3 <= 4'd5;
-	num4 <= 4'd7;
+	num2 <= 4'd2;
+	num3 <= 4'd3;
+	num4 <= 4'd4;
 	
-	dp_n <= 4'b1000;
+	dp_n <= 4'b1001;
 
   end
 
-  function [6:0] dt_translate;//For Common anode {(dp)abcdefg}
+  function [6:0] dt_translate;//For Common anode {abcdefg}
     input[3:0]date;
     begin
       case (date)

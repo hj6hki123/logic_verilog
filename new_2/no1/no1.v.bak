@@ -1,0 +1,34 @@
+module no1(
+input  ck, //輸入外部時鐘 pin43
+output reg[3:0] s,//輸出 七段掃描
+output reg[7:0] seg);//輸出 七段數字顯示
+reg [13:0]t; //計數暫存器(除頻用)
+
+
+always@(posedge ck)t<=t+1;//計數 外部時鐘上緣觸發 
+always@(posedge t[13])//七段掃描 自訂時鐘(t[13])上緣觸發 
+
+case(s)
+
+4'b0001 : 
+begin s<=4'b0010; //七段數字十位亮
+seg<=8'b00000110; //七段數字 共陰極-給1亮{abcdefg}
+end
+
+4'b0010 :
+ begin s<=4'b0100;//七段數字百位亮
+seg<=8'b11011011;//七段數字 共陰極-給1亮{abcdefg}
+end
+
+4'b0100 : 
+begin s<=4'b1000;//七段數字千位亮
+seg<=8'b11001111;//七段數字 共陰極-給1亮{abcdefg}
+end
+
+default :
+ begin s<=4'b0001;//七段數字個位亮
+seg<=8'b10111111;//七段數字 共陰極-給1亮{abcdefg}
+end
+
+endcase
+endmodule

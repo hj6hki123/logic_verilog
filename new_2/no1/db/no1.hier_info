@@ -1,0 +1,29 @@
+|no1
+ck => t[0].CLK
+ck => t[1].CLK
+ck => t[2].CLK
+ck => t[3].CLK
+ck => t[4].CLK
+ck => t[5].CLK
+ck => t[6].CLK
+ck => t[7].CLK
+ck => t[8].CLK
+ck => t[9].CLK
+ck => t[10].CLK
+ck => t[11].CLK
+ck => t[12].CLK
+ck => t[13].CLK
+s[0] <= s[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+s[1] <= s[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+s[2] <= s[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+s[3] <= s[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+seg[0] <= seg[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= seg[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= seg[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= seg[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= seg[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= seg[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= seg[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+seg[7] <= seg[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

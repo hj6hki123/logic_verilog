@@ -1,0 +1,43 @@
+|no2
+ck => t[0].CLK
+ck => t[1].CLK
+ck => t[2].CLK
+ck => t[3].CLK
+ck => t[4].CLK
+ck => t[5].CLK
+ck => t[6].CLK
+ck => t[7].CLK
+ck => t[8].CLK
+ck => t[9].CLK
+ck => t[10].CLK
+ck => t[11].CLK
+ck => t[12].CLK
+ck => t[13].CLK
+s[0] <= s[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+s[1] <= s[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+s[2] <= s[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+s[3] <= s[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+s[4] <= s[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+s[5] <= s[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+s[6] <= s[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+R[0] => Equal0.IN7
+R[0] => Equal1.IN7
+R[0] => Equal2.IN7
+R[0] => Equal3.IN7
+R[1] => Equal0.IN6
+R[1] => Equal1.IN6
+R[1] => Equal2.IN6
+R[1] => Equal3.IN6
+R[2] => Equal0.IN5
+R[2] => Equal1.IN5
+R[2] => Equal2.IN5
+R[2] => Equal3.IN5
+R[3] => Equal0.IN4
+R[3] => Equal1.IN4
+R[3] => Equal2.IN4
+R[3] => Equal3.IN4
+C[0] <= C[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+C[1] <= C[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+C[2] <= C[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
